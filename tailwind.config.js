@@ -7,18 +7,16 @@ export default {
   theme: {
     extend: {
       colors: {
-        "Morado": "#533E85",
-        "App-azul-oscuro": "#291F71",
-        "Rosado-Claro": "#E7D9EA",
-        "verde-agua": "#11698E",
-        "Azul-oscuro": "#19456B",
-        "Verde-menta": "#16C79A",
-        "Casi-Blanco": "#F7F7F8",
-        "Amarillo-app": "#FFD44A",
-        "Negro-app": "#0C0C0C"
+        "azul-oscuro":"#001524",
+        "verde-militar": "#445D48",
+        "varde-tierra": "#D6CC99",
+        "marron-claro": "#FDE5D4"
       },
       fontFamily: {
         Inter : ['Inter']
+      },
+      animation:{
+        'spin-slow': 'spin 20s linear infinite'
       }
     },
   },
