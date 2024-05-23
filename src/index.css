@@ -2,9 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-/* imoprtamos la fuente */
+/* 
+#001524
+#445D48
+#D6CC99
+#FDE5D4 */
 
-@font-face {
-  font-family: 'Inter';
-  src: url('./assets/Fonts/Inter-VariableFont_slnt\,wght.ttf');
-}
+
