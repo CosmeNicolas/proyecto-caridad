@@ -1,4 +1,5 @@
-import { Inicio } from "./components/Inicio"
+import { Inicio } from "./components/pages/Inicio"
+import CardRecursos from "./components/recursos/CardRecursos"
 
 function App() {
  
@@ -6,6 +7,7 @@ function App() {
   return (
    <>
     <Inicio/>
+    <CardRecursos/>
     </>
   )
 }
