@@ -3,7 +3,7 @@ import { FaWhatsapp } from "react-icons/fa";
 
 const CardRecursos = () => {
   return (
-    <section className='mt-12'>
+    <section className='my-12 mx-auto flex-wrap items-center'>
       <h1 className='text-3xl font-bold text-white text-center mb-8'>Donaciones</h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 px-4">
         {[1, 2, 3, 4, 5, 6, 7, 8].map((_, index) => (
@@ -31,7 +31,7 @@ const CardRecursos = () => {
                 <strong>Contacto:</strong> 123-456-7890
               </p>
             </div>
-            <div className="px-6 pt-4 pb-2">
+            <div className=" px-6 pt-4 pb-2 ">
               <a 
                 href="https://wa.me/1234567890" 
                 className="inline-block bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-full"
