@@ -6,8 +6,7 @@ const CardRecursos = () => {
     <section className='my-12 mx-auto flex-wrap items-center'>
       <h1 className='text-3xl font-bold text-white text-center mb-8'>Donaciones</h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 px-4">
-        {[1, 2, 3, 4, 5, 6, 7, 8].map((_, index) => (
-          <div key={index} className="max-w-sm rounded overflow-hidden shadow-lg bg-white">
+          <div  className="max-w-sm rounded overflow-hidden shadow-lg bg-white">
             <img className="w-full" src="https://images.pexels.com/photos/274385/pexels-photo-274385.jpeg" alt="Imagen del producto" />
             <div className="px-6 py-4">
               <div className="font-bold text-xl mb-2">Título del Producto</div>
@@ -42,7 +41,6 @@ const CardRecursos = () => {
               </a>
             </div>
           </div>
-        ))}
       </div>
     </section>
   );
