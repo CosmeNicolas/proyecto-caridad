@@ -1,8 +1,9 @@
 import logo from '../../assets/img/logo-provisorio.png'
 import { AiFillPlusCircle } from "react-icons/ai";
-
+import CardRecursos from '../recursos/CardRecursos';
 export const Inicio = () => {
   return (
+    <>
     <section className="flex justify-center items-center flex-col  mt-3">
         <div>
       <img className="animate-spin-slow  p-1" src={logo} alt="Card image" />
@@ -18,5 +19,8 @@ export const Inicio = () => {
     </button>
       </div>
     </section>
+    <CardRecursos></CardRecursos>
+    </>
+    
   )
 }
