@@ -4,9 +4,9 @@ function App() {
  
 
   return (
-   <>
+ 
     <Inicio/>
-    </>
+  
   )
 }
 
