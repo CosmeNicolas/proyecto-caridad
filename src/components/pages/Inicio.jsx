@@ -1,9 +1,9 @@
-import logo from '../assets/img/logo-provisorio.png'
+import logo from '../../assets/img/logo-provisorio.png'
 import { AiFillPlusCircle } from "react-icons/ai";
 
 export const Inicio = () => {
   return (
-    <section className="flex justify-center items-center flex-col mt-3 min-h-screen">
+    <section className="flex justify-center items-center flex-col  mt-3">
         <div>
       <img className="animate-spin-slow  p-1" src={logo} alt="Card image" />
         </div>
