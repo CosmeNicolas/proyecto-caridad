@@ -1,27 +1,63 @@
-import React from 'react'
-
+import {Navbar, NavbarBrand, NavbarContent, NavbarItem, NavbarMenuToggle, NavbarMenu, NavbarMenuItem, Link} from "@nextui-org/react";
+import { useState } from 'react';
+import logo from '../../assets/img/logo-provisorio.png'
 const NavBar = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const menuItems = [
+    "Inicio",
+    "Donaciones",
+    "Detalles"
+  ];
   return (
     <>
-    <div className="bg-gray-100 flex flex-col min-h-screen">
+      <Navbar className="text-dark bg-[#445D48]" onMenuOpenChange={setIsMenuOpen}>
+      <NavbarContent>
+        <NavbarBrand>
+          <img className="w-[50px]" src={logo} alt="logo" />
+        </NavbarBrand>
+        <NavbarMenuToggle
+          aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+          className="sm:hidden menu-toggle"
+        />
+      </NavbarContent>
 
-<div class="flex-grow">
-        <h1 class="text-4xl text-center mt-10">Contenido Principal</h1>
-        <p class="mt-5 text-center">Desplázate hacia abajo para ver el navbar fijo en la parte inferior.</p>
-        <div class="h-screen bg-blue-200 mt-10">Más contenido aquí...</div>
-        <div class="h-screen bg-green-200 mt-10">Aún más contenido...</div>
-    </div>
-
-   
-    <nav class="fixed bottom-0 left-0 w-full bg-white shadow-lg">
-        <div class="container mx-auto px-4 py-2 flex justify-between items-center">
-            <a href="#" class="text-blue-500 hover:text-blue-700">Inicio</a>
-            <a href="#" class="text-blue-500 hover:text-blue-700">Servicios</a>
-            <a href="#" class="text-blue-500 hover:text-blue-700">Acerca de</a>
-            <a href="#" class="text-blue-500 hover:text-blue-700">Contacto</a>
-        </div>
-    </nav>
-    </div>
+      <NavbarContent className="hidden sm:flex gap-4 " justify="center">
+      <NavbarItem>
+          <Link className="text-2xl font-bold" color="foreground" href="#">
+            Inicio
+          </Link>
+        </NavbarItem>
+        <NavbarItem isActive>
+          <Link className="text-2xl font-bold" href="#" aria-current="page">
+            Donaciones
+          </Link>
+        </NavbarItem>
+        <NavbarItem>
+          <Link className="text-2xl font-bold" color="foreground" href="#">
+            Detalles
+          </Link>
+        </NavbarItem>
+      </NavbarContent>
+     {/*  <NavbarContent justify="end">
+      </NavbarContent> */}
+      <NavbarMenu>
+        {menuItems.map((item, index) => (
+          <NavbarMenuItem key={`${item}-${index}`}>
+            <Link
+              color={
+                index === 2 ? "primary" : index === menuItems.length - 1 ? "danger" : "foreground"
+              }
+              className="w-full flex  justify-center font-bold"
+              href="#"
+              size="lg"
+            >
+              {item}
+            </Link>
+          </NavbarMenuItem>
+        ))}
+      </NavbarMenu>
+    </Navbar>
 
     </> 
   )
