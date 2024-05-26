@@ -17,9 +17,6 @@ export default {
       fontFamily: {
         Inter : ['Inter']
       },
-      animation:{
-        'spin-slow': 'spin 20s linear infinite'
-      }
     },
   },
   darkMode: "class",

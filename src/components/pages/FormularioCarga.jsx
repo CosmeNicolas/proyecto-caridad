@@ -63,6 +63,23 @@ const FormularioCarga = () => {
             </div>
             <div>
               <label htmlFor="estado" className="text-white">
+                Tipo de Donacion
+              </label>
+              <Select
+                id="estado"
+                {...register("Estado")}
+                placeholder="Seleccionar categoria"
+              >
+                <SelectItem value="CasiNuevo">Ropa👕</SelectItem>
+                <SelectItem value="Usado">Muebles🪵</SelectItem>
+                <SelectItem value="Usado">Electrodoméstico🏠</SelectItem>
+                <SelectItem value="Usado">Tecnología y Accesorios💻</SelectItem>
+                <SelectItem value="Usado">Herramientas🛠️</SelectItem>
+                <SelectItem value="Usado">Otros🎲</SelectItem>
+              </Select>
+            </div>
+            <div>
+              <label htmlFor="estado" className="text-white">
                 Estado
               </label>
               <Select

@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
   
     <section className="flex justify-center items-center flex-col  mt-3">
         <div>
-      <img className="animate-spin-slow  " src={logo} alt="Card-image" />
+      <img className="animate-pulse" src={logo} alt="Card-image" />
         </div>
       <div className='text-center'>
       <h1 className='text-gray-50 text-3xl font-bold'>💚Coperar🌳</h1>
