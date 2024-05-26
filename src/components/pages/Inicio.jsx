@@ -1,6 +1,6 @@
 import logo from '../../assets/img/logo-provisorio.png'
 import { AiFillPlusCircle } from "react-icons/ai";
-import CardRecursos from '../recursos/CardRecursos';
+import { Link } from 'react-router-dom';
 
 export const Inicio = () => {
   return (
@@ -14,9 +14,9 @@ export const Inicio = () => {
       
       <button className="bg-[#445D48] hover:bg-[#D6CC99] hover:text-azul-oscuro text-white font-bold py-2 px-4 rounded-full mt-3 text-xl text-center">
         Agregar recurso
-    <div className='flex justify-center items-center '>
+    <Link className='flex justify-center items-center '  to="/formulario" href="#">
     <AiFillPlusCircle className='font-extrabold  items-center text-3xl'/>
-    </div>
+    </Link>
     </button>
       </div>
     </section>
