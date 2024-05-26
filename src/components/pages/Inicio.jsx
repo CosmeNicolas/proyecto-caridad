@@ -2,12 +2,12 @@ import logo from '../../assets/img/logo-provisorio.png'
 import { AiFillPlusCircle } from "react-icons/ai";
 import { Link } from 'react-router-dom';
 
-export const Inicio = () => {
+ const Inicio = () => {
   return (
-    <>
+  
     <section className="flex justify-center items-center flex-col  mt-3 h-screen">
         <div>
-      <img className="animate-spin-slow  p-1" src={logo} alt="Card image" />
+      <img className="animate-spin-slow  " src={logo} alt="Card-image" />
         </div>
       <div className='text-center'>
       <h1 className='text-gray-50 text-3xl font-bold'>💚Coperar🌳</h1>
@@ -20,7 +20,7 @@ export const Inicio = () => {
     </button>
       </div>
     </section>
-    </>
-    
   )
 }
+
+export default Inicio

@@ -6,7 +6,9 @@ import { FaWhatsapp } from "react-icons/fa";
 const CardRecursos = () => {
   
   return (
-    <section className="flex justify-center items-center">
+    <>
+    <section className="flex justify-center flex-col items-center bg-[#001524] h-screen">
+    <h1 className="text-3xl text-center font-bold text-white ">Donaciones</h1>
       <Card className="max-w-xs md:max-w-md lg:max-w-lg py-4">
         <CardHeader className="overflow-hidden py-2">
           <div className="w-full relative">
@@ -53,6 +55,7 @@ const CardRecursos = () => {
         </CardBody>
       </Card>
     </section>
+    </>
   );
 };
 
