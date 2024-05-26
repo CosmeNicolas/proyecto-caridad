@@ -14,7 +14,7 @@ const FormularioCarga = () => {
   console.log(errors);
   return (
     <>
-    <section className="h-screen bg-[#001524]">
+    <section className="bg-[#001524]">
         <h1 className="text-center py-6 text-3xl font-bold text-white">
           Ingrese Recurso
         </h1>

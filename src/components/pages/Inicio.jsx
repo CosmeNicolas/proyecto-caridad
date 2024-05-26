@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
  const Inicio = () => {
   return (
   
-    <section className="flex justify-center items-center flex-col  mt-3 h-screen">
+    <section className="flex justify-center items-center flex-col  mt-3">
         <div>
       <img className="animate-spin-slow  " src={logo} alt="Card-image" />
         </div>
