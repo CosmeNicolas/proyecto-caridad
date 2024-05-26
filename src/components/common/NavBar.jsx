@@ -24,7 +24,7 @@ const NavBar = () => {
 
       <NavbarContent className="hidden sm:flex gap-4 " justify="center">
       <NavbarItem>
-          <Link className="text-2xl font-bold" color="foreground" href="#">
+          <Link  className="text-2xl font-bold" color="foreground" href="#">
             Inicio
           </Link>
         </NavbarItem>
