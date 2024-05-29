@@ -2,7 +2,7 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import { Input } from "@nextui-org/input";
 import {Button} from "@nextui-org/react";
-import { Select, SelectItem } from "@nextui-org/react";
+
 
 const FormularioCarga = () => {
   const {
@@ -21,6 +21,7 @@ const FormularioCarga = () => {
         Ingrese Recurso
       </h1>
       <div className="mx-auto max-w-md backdrop-filter backdrop-blur-sm bg-opacity-70 rounded-2xl p-5 bg-[#D6CC99]">
+      
         <form
           className="flex flex-col gap-4 bg-transparent"
           onSubmit={handleSubmit(onSubmit)}
@@ -96,49 +97,58 @@ const FormularioCarga = () => {
               <span className="text-red-500">{errors.descripcion.message}</span>
             )}
           </div>
-          {/* CATEGORIA */}
-          <div>
+          {/* CONTENEDOR - estado - categoria */}
+          <div className="flex flex-wrap justify-between">
+      
+          {/* ESTADO DONACION */}
+      
+            <div className="flex flex-col ">
+            <label id="estadolabel" htmlFor="estado" className="text-white">
+              Estado
+            </label>
+           
+            <select
+              id="estado"
+              aria-labelledby="estadolabel"
+              placeholder="Seleccionar estado"
+              className="bg-white border border-gray-300 text-gray-700 py-2 px-4 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-200 focus:border-[#D6CC99]"
+              {...register("estado", { required: 'El estado es obligatorio' })}
+            >
+              <option value="Usado">Usado</option>
+              <option value="Casi nuevo">Casi nuevo</option>
+            </select>
+       
+            {errors.estado && (
+              <span className="text-red-500">{errors.estado.message}</span>
+            )}
+            </div>
+                {/* CATEGORIA */}
+          <div className="flex flex-col">
             <label htmlFor="categoria" className="text-white">
               Categoría
             </label>
-            <Select
+            <select
               id="categoria"
               aria-labelledby="categoriaLabel"
               placeholder="Seleccionar categoría"
-              {...register("categoria", { required: true})}
+              className="bg-white border border-gray-300 text-gray-700 py-2 px-4 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-200 focus:border-[#D6CC99]"
+              {...register("categoria", { required: 'Debe selecionar una categoria'})}
             >
-              <SelectItem value="Papel">Papel📄</SelectItem>
-              <SelectItem value="Plastico">Plástico🧴</SelectItem>
-              <SelectItem value="Vidrio">Vidrio🪞</SelectItem>
-              <SelectItem value="Ropa">Ropa👕</SelectItem>
-              <SelectItem value="Muebles">Muebles🪵</SelectItem>
-              <SelectItem value="Electrodomestico">Electrodoméstico🏠</SelectItem>
-              <SelectItem value="Tecnologia y Accesorios">Tecnología y Accesorios💻</SelectItem>
-              <SelectItem value="Herramientas">Herramientas🛠️</SelectItem>
-              <SelectItem value="Otros">Otros🎲</SelectItem>
-            </Select>
+              <option value="Papel">Papel📄</option>
+              <option value="Plastico">Plástico🧴</option>
+              <option value="Vidrio">Vidrio🪞</option>
+              <option value="Ropa">Ropa👕</option>
+              <option value="Muebles">Muebles🪵</option>
+              <option value="Electrodomestico">Electrodoméstico🏠</option>
+              <option value="Tecnologia y Accesorios">Tecnología y Accesorios💻</option>
+              <option value="Herramientas">Herramientas🛠️</option>
+              <option value="Otros">Otros🎲</option>
+            </select>
             {errors.categoria && (
               <span className="text-red-500">{errors.categoria.message}</span>
             )}
           </div>
-          {/* ESTADO DONACION */}
-          <div>
-            <label id="estadolabel" htmlFor="estado" className="text-white">
-              Estado
-            </label>
-            <Select
-              id="estado"
-              aria-labelledby="estadolabel"
-              placeholder="Seleccionar estado"
-              {...register("estado", { required: 'El estado es obligatorio' })}
-            >
-              <SelectItem value="Usado">Usado</SelectItem>
-              <SelectItem value="Casi nuevo">Casi nuevo</SelectItem>
-            </Select>
-            {errors.estado && (
-              <span className="text-red-500">{errors.estado.message}</span>
-            )}
-          </div>
+            </div>
           {/* NOMBRE COOPERADOR */}
           <div>
             <label htmlFor="nombreCooperador" className="text-white">
@@ -195,6 +205,7 @@ const FormularioCarga = () => {
             Enviar
           </Button>
         </form>
+        
       </div>
     </section>
   );
