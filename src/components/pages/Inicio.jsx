@@ -2,7 +2,10 @@ import logo from '../../assets/img/logo-provisorio.png'
 import { AiFillPlusCircle } from "react-icons/ai";
 import { Link } from 'react-router-dom';
 
+
  const Inicio = () => {
+
+
   return (
   
     <section className="flex justify-center items-center flex-col  mt-3">
