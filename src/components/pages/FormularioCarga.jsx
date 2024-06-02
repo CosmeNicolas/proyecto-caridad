@@ -33,7 +33,7 @@ const FormularioCarga = () => {
             </label>
             <Input
               id="imagen"
-              type="text"
+              type="file"
               placeholder="URL de la imagen"
               {...register("imagen", { 
                 required: 'La imagen es obligatoria',
