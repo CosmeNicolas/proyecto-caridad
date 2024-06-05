@@ -1,50 +1,64 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import { Input } from "@nextui-org/input";
-import {Button} from "@nextui-org/react";
-
+import { Button } from "@nextui-org/react";
+import { crearDonacionApi } from "../../helpers/queries";
 
 const FormularioCarga = () => {
   const {
     register,
     handleSubmit,
     formState: { errors },
+    reset,
   } = useForm();
-  const onSubmit = (data) => {
-    console.log('Formulario enviado:', data);
+
+  const crearDonacion = async (data) => {
+    console.log("Formulario enviado con datos:", data);
+
+    const formData = new FormData();
+    formData.append("imagenDonacion", data.imagenDonacion[0]);
+    formData.append("nombreDonacion", data.nombreDonacion);
+    formData.append("descripcion", data.descripcion);
+    formData.append("estado", data.estado);
+    formData.append("categoria", data.categoria);
+    formData.append("nombreCooperador", data.nombreCooperador);
+    formData.append("numeroContacto", data.numeroContacto);
+
+    try {
+      const respuesta = await crearDonacionApi(formData);
+      if (respuesta.status === 201) {
+        console.log('Donación creada');
+        reset();
+      }
+    } catch (error) {
+      console.error('Error al crear la donación:', error);
+    }
   };
-    
- 
+
   return (
     <section className="bg-[#001524]">
       <h1 className="text-center py-6 text-3xl font-bold text-white">
         Ingrese Recurso
       </h1>
       <div className="mx-auto max-w-md backdrop-filter backdrop-blur-sm bg-opacity-70 rounded-2xl p-5 bg-[#D6CC99]">
-      
-        <form
+      <form
           className="flex flex-col gap-4 bg-transparent"
-          onSubmit={handleSubmit(onSubmit)}
+          onSubmit={handleSubmit(crearDonacion)}
+          encType="multipart/form-data"
+          method="post"
         >
           {/* IMAGEN */}
           <div>
-            <label htmlFor="imagen" className="text-white">
+            <label htmlFor="imagenDonacion" className="text-white">
               Agregar Imagen
             </label>
-            <Input
-              id="imagen"
+            <input
+              id="imagenDonacion"
               type="file"
-              placeholder="URL de la imagen"
-              {...register("imagen", { 
-                required: 'La imagen es obligatoria',
-                pattern: {
-                  value: /(http(s?):)([/|.|\w|\s|-])*\.(?:jpg|gif|png|jpeg)/,
-                  message: "Debe ingresar una imagen de formato válido: jpeg, png, gif, jpg",
-                }
-              })}
+              {...register("imagenDonacion", { required: 'La imagen es obligatoria' })}
             />
-            {errors.imagen && (
-              <span className="text-red-500">{errors.imagen.message}</span>
+            {errors.imagenDonacion && (
+              <span className="text-red-500">{errors.imagenDonacion.message}</span>
             )}
           </div>
           {/* NOMBRE DONACION */}
@@ -99,56 +113,52 @@ const FormularioCarga = () => {
           </div>
           {/* CONTENEDOR - estado - categoria */}
           <div className="flex flex-wrap justify-between">
-      
-          {/* ESTADO DONACION */}
-      
-            <div className="flex flex-col ">
-            <label id="estadolabel" htmlFor="estado" className="text-white">
-              Estado
-            </label>
-           
-            <select
-              id="estado"
-              aria-labelledby="estadolabel"
-              placeholder="Seleccionar estado"
-              className="bg-white border border-gray-300 text-gray-700 py-2 px-4 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-200 focus:border-[#D6CC99]"
-              {...register("estado", { required: 'El estado es obligatorio' })}
-            >
-              <option value="Usado">Usado</option>
-              <option value="Casi nuevo">Casi nuevo</option>
-            </select>
-       
-            {errors.estado && (
-              <span className="text-red-500">{errors.estado.message}</span>
-            )}
+            {/* ESTADO DONACION */}
+            <div className="flex flex-col">
+              <label id="estadolabel" htmlFor="estado" className="text-white">
+                Estado
+              </label>
+              <select
+                id="estado"
+                aria-labelledby="estadolabel"
+                placeholder="Seleccionar estado"
+                className="bg-white border border-gray-300 text-gray-700 py-2 px-4 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-200 focus:border-[#D6CC99]"
+                {...register("estado", { required: 'El estado es obligatorio' })}
+              >
+                <option value="Usado">Usado</option>
+                <option value="Casi nuevo">Casi nuevo</option>
+              </select>
+              {errors.estado && (
+                <span className="text-red-500">{errors.estado.message}</span>
+              )}
             </div>
-                {/* CATEGORIA */}
-          <div className="flex flex-col">
-            <label htmlFor="categoria" className="text-white">
-              Categoría
-            </label>
-            <select
-              id="categoria"
-              aria-labelledby="categoriaLabel"
-              placeholder="Seleccionar categoría"
-              className="bg-white border border-gray-300 text-gray-700 py-2 px-4 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-200 focus:border-[#D6CC99]"
-              {...register("categoria", { required: 'Debe selecionar una categoria'})}
-            >
-              <option value="Papel">Papel📄</option>
-              <option value="Plastico">Plástico🧴</option>
-              <option value="Vidrio">Vidrio🪞</option>
-              <option value="Ropa">Ropa👕</option>
-              <option value="Muebles">Muebles🪵</option>
-              <option value="Electrodomestico">Electrodoméstico🏠</option>
-              <option value="Tecnologia y Accesorios">Tecnología y Accesorios💻</option>
-              <option value="Herramientas">Herramientas🛠️</option>
-              <option value="Otros">Otros🎲</option>
-            </select>
-            {errors.categoria && (
-              <span className="text-red-500">{errors.categoria.message}</span>
-            )}
+            {/* CATEGORIA */}
+            <div className="flex flex-col">
+              <label htmlFor="categoria" className="text-white">
+                Categoría
+              </label>
+              <select
+                id="categoria"
+                aria-labelledby="categoriaLabel"
+                placeholder="Seleccionar categoría"
+                className="bg-white border border-gray-300 text-gray-700 py-2 px-4 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-200 focus:border-[#D6CC99]"
+                {...register("categoria", { required: 'Debe seleccionar una categoría'})}
+              >
+                <option value="Papel">Papel📄</option>
+                <option value="Plastico">Plástico🧴</option>
+                <option value="Vidrio">Vidrio🪞</option>
+                <option value="Ropa">Ropa👕</option>
+                <option value="Muebles">Muebles🪵</option>
+                <option value="Electrodomestico">Electrodoméstico🏠</option>
+                <option value="Tecnologia y Accesorios">Tecnología y Accesorios💻</option>
+                <option value="Herramientas">Herramientas🛠️</option>
+                <option value="Otros">Otros🎲</option>
+              </select>
+              {errors.categoria && (
+                <span className="text-red-500">{errors.categoria.message}</span>
+              )}
+            </div>
           </div>
-            </div>
           {/* NOMBRE COOPERADOR */}
           <div>
             <label htmlFor="nombreCooperador" className="text-white">
@@ -205,7 +215,6 @@ const FormularioCarga = () => {
             Enviar
           </Button>
         </form>
-        
       </div>
     </section>
   );
