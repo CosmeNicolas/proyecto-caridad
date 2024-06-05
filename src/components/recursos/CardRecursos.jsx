@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { Card, CardHeader, CardBody, Image } from "@nextui-org/react";
-import { FaWhatsapp } from "react-icons/fa";
+import { FaUpload, FaWhatsapp } from "react-icons/fa";
 import { leerDonaciones } from "../../helpers/queries";
 
 const CardRecursos = () => {
   const [verDonaciones, setVerDonaciones] = useState([]);
+ 
   useEffect(() => {
     donacionesApi();
   }, []);
@@ -23,6 +24,7 @@ const CardRecursos = () => {
     }
   };
 
+
   return (
     <>
       <section className="flex justify-center flex-col items-center bg-[#001524]">
@@ -40,7 +42,7 @@ const CardRecursos = () => {
                   <Image
                     alt="Card background"
                     className=" rounded-xl w-full h-full"
-                    src={donacion.imagen}
+                    src={`http://localhost:4007/${donacion.imagen.replace(/\\/g, '/')}`}
                   />
                 </div>
               </CardHeader>
@@ -76,7 +78,7 @@ const CardRecursos = () => {
                 </div>
                 <div className="px-6 pt-4 pb-2">
                   <a
-                    href={`https://wa.me/${donacion.numeroContacto}?text=Hola%20${donacion.nombreCooperador}%2C%20estoy%20interesado%20en%20la%20donación%20${donacion.nombreDonacio}`}
+                    href={`https://wa.me/${donacion.numeroContacto}?text=Hola%20${donacion.nombreCooperador}%2C%20estoy%20interesado%20en%20la%20donación%20${donacion.nombreDonacion}`}
                     className="inline-block bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-full"
                     target="_blank"
                     rel="noopener noreferrer"

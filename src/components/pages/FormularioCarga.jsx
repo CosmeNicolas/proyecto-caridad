@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { Input } from "@nextui-org/input";
 import { Button } from "@nextui-org/react";
 import { crearDonacionApi } from "../../helpers/queries";
-
+import CardRecursos from "../recursos/CardRecursos";
 const FormularioCarga = () => {
+  const [donacion, setDoancion]=useState([])
+
+
   const {
     register,
     handleSubmit,
@@ -30,10 +33,12 @@ const FormularioCarga = () => {
         console.log('Donación creada');
         reset();
       }
+      setDoancion(formData)
     } catch (error) {
       console.error('Error al crear la donación:', error);
     }
   };
+ 
 
   return (
     <section className="bg-[#001524]">
