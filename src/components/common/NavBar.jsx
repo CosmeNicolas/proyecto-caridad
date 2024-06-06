@@ -9,7 +9,7 @@ const NavBar = () => {
 
   return (
     <>
-      <Navbar className="text-dark bg-[#35443770]" onMenuOpenChange={setIsMenuOpen}>
+      <Navbar className="text-dark bg-[#35443770] font-oswald" onMenuOpenChange={setIsMenuOpen}>
         <NavbarContent>
           <NavbarBrand>
             <Link to='/'>
