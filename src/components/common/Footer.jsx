@@ -9,13 +9,13 @@ const Footer = () => {
       <article>
         <p className=" text-slate-200 text-lg ">Hecho con 💚 </p>
       </article>
-      |
+      <p className='text-2xl text-verde-tierra'>|</p>
       <article>
         <p className="text-lg text-slate-200">
           &copy; Todos los derechos reservados
         </p>
       </article>
-      |  
+      <p className='text-2xl text-verde-tierra'>|</p>
       <article>
         <p className="text-lg text-slate-200">Sigueme:</p>
         <ul className='flex  justify-around text-slate-200'>
