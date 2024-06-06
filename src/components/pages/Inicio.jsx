@@ -11,7 +11,7 @@ import { Link } from 'react-router-dom';
        </div>
        <div className="text-center">
          <h1 className="text-gray-50 text-3xl font-bold font-oswald">
-           TucuManos👋
+           🤝TucuManos👋
          </h1>
          <div className="flex items-center justify-center ">
           <Link to="/formulario" className="bg-[#445D48] hover:bg-[#D6CC99] hover:text-azul-oscuro text-white font-bold py-3 px-5 rounded-full mt-3 text-xl font-oswald">
