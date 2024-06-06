@@ -15,7 +15,6 @@ export default {
         "marron-claro": "#FDE5D4"
       },
       fontFamily: {
-        Inter : ['Inter'],
         oswald: ['Oswald', 'sans-serif'],
       },
     },
