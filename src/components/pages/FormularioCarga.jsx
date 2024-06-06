@@ -41,7 +41,7 @@ const FormularioCarga = () => {
  
 
   return (
-    <section className="bg-[#001524]">
+    <section className="flex-grow bg-[#001524] mb-4">
       <h1 className="text-center py-6 text-3xl font-bold text-white">
         Ingrese Recurso
       </h1>
