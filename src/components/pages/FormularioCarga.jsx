@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 import { Input } from "@nextui-org/input";
 import { Button } from "@nextui-org/react";
 import { crearDonacionApi } from "../../helpers/queries";
-import CardRecursos from "../recursos/CardRecursos";
+
 const FormularioCarga = () => {
   const [donacion, setDoancion]=useState([])
 
@@ -43,7 +43,7 @@ const FormularioCarga = () => {
   return (
     <section className="flex-grow bg-[#001524] mb-4">
       <h1 className="text-center py-6 text-3xl font-bold text-white">
-        Ingrese Recurso
+        Ingresar Donación
       </h1>
       <div className="mx-auto max-w-md backdrop-filter backdrop-blur-sm bg-opacity-70 rounded-2xl p-5 bg-[#D6CC99]">
       <form

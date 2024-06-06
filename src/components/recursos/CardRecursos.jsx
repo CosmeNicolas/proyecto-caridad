@@ -38,7 +38,7 @@ const CardRecursos = () => {
               className="max-w-xs md:max-w-md lg:max-w-lg my-2 py-4"
             >
               <CardHeader className="overflow-hidden py-2">
-                <div className="object-cover w-[296px] h-[222px] relative ">
+                <div className="  h-[222px] relative ">
                   <Image
                     alt="Card background"
                     className=" rounded-xl w-full h-full"
@@ -46,19 +46,21 @@ const CardRecursos = () => {
                   />
                 </div>
               </CardHeader>
-              <CardBody className="pb-0 pt-2 px-4 flex-col items-start">
+              <CardBody className=" pt-2 px-4 flex-col ">
                 <div className="px-6 pt-4 pb-2">
                   <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
                     {donacion.estado}
                   </span>
+                  <div>
                   <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
                     {donacion.categoria}
                   </span>
+                  </div>
                   <hr />
                 </div>
                 <div className="px-6 py-4">
                   <div className="font-bold text-xl mb-2">
-                    {donacion.nombreDonacio}
+                    {donacion.nombreDonacion}
                   </div>
                   <p className="text-gray-700 text-base">
                     {donacion.descripcion}
@@ -67,7 +69,7 @@ const CardRecursos = () => {
                 <div className="px-6 pt-4 pb-2">
                   <p className="text-gray-700 text-base">
                     <strong>
-                      Nombre Contacto:{donacion.nombreCooperador}{" "}
+                      Nombre Contacto:{donacion.nombreCooperador}
                     </strong>
                   </p>
                 </div>

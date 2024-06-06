@@ -26,7 +26,7 @@ const NavBar = () => {
           <NavbarItem isActive={location.pathname === '/'}>
             <Link
               to="/"
-              className={`font-bold text-white  ${location.pathname === '/' ? ' rounded-md bg-[#D6CC99] p-1 text-[#001524]' : ''}`}
+              className={`font-bold   ${location.pathname === '/' ? ' rounded-md bg-[#D6CC99] p-2 text-[#001524]' : 'text-[#D6CC99]'}`}
             >
               Inicio
             </Link>
@@ -34,15 +34,15 @@ const NavBar = () => {
           <NavbarItem isActive={location.pathname === '/formulario'}>
             <Link
               to="/formulario"
-              className={`font-bold text-white  ${location.pathname === '/formulario' ? ' rounded-md bg-[#D6CC99] p-1 text-[#001524]' : ''}`}
+              className={`font-bold   ${location.pathname === '/formulario' ? ' rounded-md bg-[#D6CC99] p-2 text-[#001524]' : 'text-[#D6CC99]'}`}
             >
-              Coperar
+              Cooperar
             </Link>
           </NavbarItem>
           <NavbarItem  isActive={location.pathname === '/donaciones'}>
             <Link
               to="/donaciones"
-              className={` font-bold text-white  ${location.pathname === '/donaciones' ? ' rounded-md bg-[#D6CC99] p-1 text-[#001524]' : ''}`}
+              className={` font-bold   ${location.pathname === '/donaciones' ? ' rounded-md bg-[#D6CC99] p-2 text-[#001524]' : ' text-[#D6CC99]'}`}
             >
               Donaciones
             </Link>
