@@ -11,7 +11,7 @@ export default {
       colors: {
         "azul-oscuro":"#001524",
         "verde-militar": "#445D48",
-        "varde-tierra": "#D6CC99",
+        "verde-tierra": "#D6CC99",
         "marron-claro": "#FDE5D4"
       },
       fontFamily: {

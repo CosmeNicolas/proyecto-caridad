@@ -3,6 +3,8 @@ import { useForm } from "react-hook-form";
 import { Input } from "@nextui-org/input";
 import { Button } from "@nextui-org/react";
 import { crearDonacionApi } from "../../helpers/queries";
+import { MdAddAPhoto } from "react-icons/md";
+
 
 const FormularioCarga = () => {
   const [donacion, setDoancion]=useState([])
@@ -60,8 +62,12 @@ const FormularioCarga = () => {
             <input
               id="imagenDonacion"
               type="file"
+              className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
               {...register("imagenDonacion", { required: 'La imagen es obligatoria' })}
             />
+             <div className="bg-verde-tierra  text-white py-4 px-4 rounded-2xl cursor-pointer">
+             <MdAddAPhoto className="mx-auto text-2xl text-verde-militar"/>
+          </div>
             {errors.imagenDonacion && (
               <span className="text-red-500">{errors.imagenDonacion.message}</span>
             )}
