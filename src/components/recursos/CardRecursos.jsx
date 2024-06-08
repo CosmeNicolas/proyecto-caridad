@@ -42,7 +42,7 @@ const CardRecursos = () => {
                   <Image
                     alt="Card background"
                     className=" rounded-xl w-full h-full"
-                    src={`http://localhost:4007/${donacion.imagen.replace(/\\/g, '/')}`}
+                    src={`http://localhost:4007/${donacion.imagenDonacion.replace(/\\/g, '/')}`}
                   />
                 </div>
               </CardHeader>
