@@ -42,7 +42,9 @@ const CardRecursos = () => {
                   <Image
                     alt="Card background"
                     className=" rounded-xl w-full h-full"
-                    src={`http://localhost:4007/${donacion.imagenDonacion.replace(/\\/g, '/')}`}
+                   src={donacion.imagenDonacion} 
+                 /*  src={`https://res.cloudinary.com/YOUR_CLOUD_NAME/image/upload/${donacion.imagenDonacion}`} */
+                  
                   />
                 </div>
               </CardHeader>
