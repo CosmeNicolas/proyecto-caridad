@@ -151,10 +151,10 @@ const FormularioCarga = () => {
                 className="bg-white border border-gray-300 text-gray-700 py-2 px-4 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-200 focus:border-[#D6CC99]"
                 {...register("categoria", { required: 'Debe seleccionar una categoría'})}
               >
+                <option value="Ropa">Ropa👕</option>
                 <option value="Papel">Papel📄</option>
                 <option value="Plastico">Plástico🧴</option>
                 <option value="Vidrio">Vidrio🪞</option>
-                <option value="Ropa">Ropa👕</option>
                 <option value="Muebles">Muebles🪵</option>
                 <option value="Electrodomestico">Electrodoméstico🏠</option>
                 <option value="Tecnologia y Accesorios">Tecnología y Accesorios💻</option>
