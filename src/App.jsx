@@ -5,9 +5,8 @@ import FormularioCarga from "./components/pages/FormularioCarga"
 import NavBar from "./components/common/NavBar"
 import Footer  from "./components/common/Footer"
 import { BrowserRouter, Routes, Route } from "react-router-dom"; 
+import DetalleDonacion from "./components/pages/DetalleDonacion"
 function App() {
- 
-
   return (
    <>
  <BrowserRouter>
@@ -17,9 +16,10 @@ function App() {
     <Route exact path="/" element={<Inicio />} />
     <Route exact path='/donaciones' element={<CardRecursos/>}/>
     <Route exact path='/formulario' element={<FormularioCarga/>}/>
+    <Route exact path='/detalleDonacion' element={<DetalleDonacion/>}/>
     </Routes>
     <Footer/>
-  </div>
+   </div>
    </BrowserRouter>
     </>
   )
