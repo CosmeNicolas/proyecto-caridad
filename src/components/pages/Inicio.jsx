@@ -14,8 +14,8 @@ import { Link } from 'react-router-dom';
            🤝TucuManos👋
          </h1>
          <div className="flex items-center justify-center ">
-          <Link to="/formulario" className="bg-[#445D48] hover:bg-[#D6CC99] hover:text-azul-oscuro text-white font-bold py-3 px-5 rounded-full mt-3 text-xl font-oswald">
-               <p>Agregar recurso</p>
+          <Link to="/formulario" className="bg-[#445D48] hover:bg-[#D6CC99] hover:text-azul-oscuro text-white font-bold py-3 px-5 rounded-full my-3 text-xl font-oswald">
+               <p>Agregar Donación</p>
                <AiFillPlusCircle className="font-extrabold text-3xl text-center mx-auto mt-2" />
            </Link>
          </div>
