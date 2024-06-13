@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { Card, CardHeader, CardBody, Image } from "@nextui-org/react";
-import { FaUpload, FaWhatsapp } from "react-icons/fa";
+import { Card, CardHeader, CardBody, Image, Button } from "@nextui-org/react";
+import { FaWhatsapp } from "react-icons/fa";
 import { leerDonaciones } from "../../helpers/queries";
+import { Link } from "react-router-dom";
+
 
 const CardRecursos = () => {
   const [verDonaciones, setVerDonaciones] = useState([]);
@@ -27,7 +29,7 @@ const CardRecursos = () => {
 
   return (
     <>
-      <section className="flex justify-center flex-col items-center bg-[#001524]">
+      <section className="flex justify-center flex-col items-center">
         <h1 className="text-3xl text-center font-bold text-white ">
           Donaciones
         </h1>
@@ -53,13 +55,13 @@ const CardRecursos = () => {
                   <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
                     {donacion.estado}
                   </span>
-                  <div>
+                  
                   <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
                     {donacion.categoria}
                   </span>
                   </div>
                   <hr />
-                </div>
+             
                 <div className="px-6 py-4">
                   <div className="font-bold text-xl mb-2">
                     {donacion.nombreDonacion}
@@ -75,21 +77,10 @@ const CardRecursos = () => {
                     </strong>
                   </p>
                 </div>
-                <div className="px-6 pt-4 pb-2">
-                  <p className="text-gray-700 text-base">
-                    <strong>Contacto:</strong> {donacion.numeroContacto}
-                  </p>
-                </div>
-                <div className="px-6 pt-4 pb-2">
-                  <a
-                    href={`https://wa.me/${donacion.numeroContacto}?text=Hola%20${donacion.nombreCooperador}%2C%20estoy%20interesado%20en%20la%20donación%20${donacion.nombreDonacion}`}
-                    className="inline-block bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-full"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
+                  <Button as={Link} to='/detalleDonacion' className="bg-[#001524] hover:bg-[#001524]  text-white shadow-lg mt-4">
+                    Ver Detalle
                     <FaWhatsapp />
-                  </a>
-                </div>
+                    </Button>                  
               </CardBody>
             </Card>
           ))}
