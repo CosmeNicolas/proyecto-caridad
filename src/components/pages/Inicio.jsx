@@ -14,7 +14,7 @@ import { Link } from 'react-router-dom';
          🍃TucuManos🌱
          </h1>
          <h2 className="text-gray-50 text-xl italic font-oswald">
-         "Unidos por un futuro sostenible"
+         "Unidos por un futuro sustentable"
           </h2>
          <div className="flex items-center justify-center ">
           <Link to="/formulario" className="bg-[#445D48] hover:bg-[#D6CC99] hover:text-azul-oscuro text-white font-bold py-3 px-5 rounded-full my-3 text-xl font-oswald">
