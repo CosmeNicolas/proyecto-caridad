@@ -25,7 +25,7 @@ const DonacionesProvider = ({children}) => {
 
 
   return (
-    <ContextDonaciones.Provider value={{donaciones, setDonaciones}}>
+    <ContextDonaciones.Provider value={{donaciones, setDonaciones, donacionesApi}}>
       {children}
     </ContextDonaciones.Provider>
   )

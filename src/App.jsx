@@ -18,7 +18,7 @@ function App() {
     <Route exact path="/" element={<Inicio />} />
     <Route exact path='/donaciones' element={<CardRecursos/>}/>
     <Route exact path='/formulario' element={<FormularioCarga/>}/>
-    <Route exact path='/detalleDonacion' element={<DetalleDonacion/>}/>
+    <Route exact path='/detalleDonacion/:id' element={<DetalleDonacion/>}/>
     </Routes>
   </DonacionesProvider>
     <Footer/>

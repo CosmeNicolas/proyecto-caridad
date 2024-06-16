@@ -7,10 +7,11 @@ import tacho from '../../assets/img/supertacho.png'
 
 
 const CardRecursos = () => {
+  const {donaciones, donacionesApi} = useContext(ContextDonaciones)
+  useEffect(() => {
+    donacionesApi()
+  }, [])
   
-  
-  const {donaciones} = useContext(ContextDonaciones)
-
   
   return (
     <>
@@ -59,7 +60,7 @@ const CardRecursos = () => {
                   <hr />
                   <Button
                     as={Link}
-                    to="/detalleDonacion"
+                    to={`/detalleDonacion/${donacion._id}`}
                     className="bg-[#001524] hover:bg-[#001524]  text-white shadow-lg mt-4"
                   >
                     Ver Detalle
