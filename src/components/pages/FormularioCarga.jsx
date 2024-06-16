@@ -159,7 +159,7 @@ const FormularioCarga = () => {
                 {...register("estado", { required: 'El estado es obligatorio' })}
               >
                 <option value="Usado">Usado</option>
-                <option value="CasiNuevo">Casi nuevo</option>
+                <option value="Casi Nuevo">Casi nuevo</option>
               </select>
               {errors.estado && (
                 <span className="text-red-500">{errors.estado.message}</span>
