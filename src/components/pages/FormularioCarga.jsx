@@ -1,12 +1,16 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useForm } from "react-hook-form";
 import { Input } from "@nextui-org/input";
 import { Button } from "@nextui-org/react";
 import { crearDonacionApi } from "../../helpers/queries";
-/* import { MdAddAPhoto } from "react-icons/md"; */
+import Swal from 'sweetalert2'
+import { useNavigate } from "react-router-dom";
+
 
 
 const FormularioCarga = () => {
+  const direccionar = useNavigate()
+
   const {
     register,
     handleSubmit,
@@ -30,12 +34,27 @@ const FormularioCarga = () => {
     try {
       const respuesta = await crearDonacionApi(formData);
       if (respuesta.status === 201) {
-        console.log('Donación creada');
+        Swal.fire({
+          title: "Donación Creada",
+          text: "Gracias por colaborar",
+          icon: "success",
+          customClass: {
+            title: 'text-[#001524]',
+            popup: 'bg-green-100',
+            icon: 'text-green-500',
+            confirmButton: 'bg-green-500 hover:bg-green-600',
+          }
+        });
         reset();
+        direccionar('/donaciones')
       }
-      setDoancion(formData)
+      setDonaciones(formData)
     } catch (error) {
-      console.error('Error al crear la donación:', error);
+      Swal.fire({
+        title: "Tenemos problemas",
+        text: "En estos momentos no podemos cargar la donacion",
+        icon: "error"
+      });
     }
   };
  
@@ -218,7 +237,6 @@ const FormularioCarga = () => {
             type="submit"
             className="bg-[#445D48] text-white px-4 py-2 rounded-md" 
             size="lg"
-            color="secondary"
           >
             Enviar
           </Button>

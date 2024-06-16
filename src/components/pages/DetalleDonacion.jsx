@@ -1,10 +1,9 @@
 import React from "react";
 import logo from "../../assets/img/logo-provisorio.png";
-import image from "../../assets/img/camiseta.png";
 import {Card, CardBody, Image,CardHeader,Button} from "@nextui-org/react";
 import { FaWhatsapp } from "react-icons/fa";
+
 const DetalleDonacion = () => {
-   /*  const [liked, setLiked] = React.useState(false); */
     return (
       <section className="h-screen flex items-center justify-center">
         <Card
@@ -34,7 +33,7 @@ const DetalleDonacion = () => {
                 className="object-cover"
                 height={200}
                 shadow="md"
-                src={image}
+                src={logo}
                 width="100%"
               />
             </div>

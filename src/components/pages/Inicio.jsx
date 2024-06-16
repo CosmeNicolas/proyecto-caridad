@@ -11,7 +11,7 @@ import { Link } from 'react-router-dom';
        </div>
        <div className="text-center">
          <h1 className="text-gray-50 text-3xl font-bold font-oswald">
-         🍃TucuManos🌱
+         🍃Tucu🤝Manos🌱
          </h1>
          <h2 className="text-gray-50 text-xl italic font-oswald">
          "Unidos por un futuro sustentable"
