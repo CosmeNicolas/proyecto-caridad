@@ -13,6 +13,7 @@ function App() {
  <BrowserRouter>
  <div className="flex flex-col min-h-screen">
    <NavBar/>
+   <div className="flex-grow">
   <DonacionesProvider>
     <Routes>
     <Route exact path="/" element={<Inicio />} />
@@ -21,6 +22,7 @@ function App() {
     <Route exact path='/detalleDonacion/:id' element={<DetalleDonacion/>}/>
     </Routes>
   </DonacionesProvider>
+  </div>
     <Footer/>
    </div>
    </BrowserRouter>

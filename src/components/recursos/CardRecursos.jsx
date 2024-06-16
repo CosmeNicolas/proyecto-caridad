@@ -20,7 +20,7 @@ const CardRecursos = () => {
     donaciones.map((donacion) => (
       <div
         key={donacion._id}
-        className="w-full sm:w-1/2 lg:w-1/4 max-w-xs md:max-w-md my-2 py-4"
+        className="w-full sm:w-1/2 lg:w-1/4 max-w-xs md:max-w-md my-1 py-2"
       >
         <Card className="h-full flex flex-col">
           <CardHeader className="overflow-hidden py-2">

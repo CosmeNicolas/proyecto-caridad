@@ -28,7 +28,7 @@ const DetalleDonacion = () => {
   };
  
     return (
-      <section className="h-full flex items-center justify-center">
+      <section className="flex items-center justify-center py-8">
        
         <Card
           isBlurred

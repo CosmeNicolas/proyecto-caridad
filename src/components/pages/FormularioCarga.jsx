@@ -89,7 +89,7 @@ const FormularioCarga = () => {
               id="imagenDonacion"
               type="file"
               {...register("imagenDonacion", { required: 'La imagen es obligatoria' })}
-            />
+           />
             {errors.imagenDonacion && (
               <span className="text-red-500">{errors.imagenDonacion.message}</span>
             )}
