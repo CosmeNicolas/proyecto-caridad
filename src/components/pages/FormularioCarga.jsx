@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext} from "react";
 import { useForm } from "react-hook-form";
 import { Input } from "@nextui-org/input";
 import { Button } from "@nextui-org/react";
@@ -11,7 +11,7 @@ import ContextDonaciones from "../../context/DonacionesContext";
 
 const FormularioCarga = () => {
   const direccionar = useNavigate()
-  const { setDonaciones} = useContext(ContextDonaciones)
+  const {setDonaciones} = useContext(ContextDonaciones)
 
   const {
     register,
@@ -64,6 +64,8 @@ const FormularioCarga = () => {
           confirmButton: 'bg-green-500 hover:bg-green-600',
         }
       });
+    }finally{
+      setCargando(false)
     }
   };
  
@@ -89,7 +91,7 @@ const FormularioCarga = () => {
               id="imagenDonacion"
               type="file"
               {...register("imagenDonacion", { required: 'La imagen es obligatoria' })}
-            />
+           />
             {errors.imagenDonacion && (
               <span className="text-red-500">{errors.imagenDonacion.message}</span>
             )}
@@ -159,7 +161,7 @@ const FormularioCarga = () => {
                 {...register("estado", { required: 'El estado es obligatorio' })}
               >
                 <option value="Usado">Usado</option>
-                <option value="CasiNuevo">Casi nuevo</option>
+                <option value="Casi Nuevo">Casi nuevo</option>
               </select>
               {errors.estado && (
                 <span className="text-red-500">{errors.estado.message}</span>
@@ -242,6 +244,7 @@ const FormularioCarga = () => {
             )}
           </div>
           {/* BTN ENVIO */}
+          
           <Button
             type="submit"
             className="bg-[#445D48] text-white px-4 py-2 rounded-md" 

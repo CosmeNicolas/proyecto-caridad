@@ -28,11 +28,11 @@ const DetalleDonacion = () => {
   };
  
     return (
-      <section className="h-screen flex items-center justify-center">
+      <section className="flex items-center justify-center py-8">
        
         <Card
           isBlurred
-          className="border-none bg-verde-tierra dark:bg-default-100/50 max-w-[610px] backdrop-blur font-oswald"
+          className="border-none bg-verde-tierra dark:bg-default-100/50 max-w-[610px] backdrop-blur font-oswald my-3"
           shadow="sm"
         >
           <CardHeader className="flex gap-3  justify-center">
