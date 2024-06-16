@@ -64,9 +64,9 @@ const FormularioCarga = () => {
           confirmButton: 'bg-green-500 hover:bg-green-600',
         }
       });
-    }finally{
+    }/* finally{
       setCargando(false)
-    }
+    } */
   };
  
 
