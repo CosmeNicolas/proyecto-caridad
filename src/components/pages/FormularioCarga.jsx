@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { useForm } from "react-hook-form";
 import { Input } from "@nextui-org/input";
 import { Button } from "@nextui-org/react";
@@ -7,15 +7,13 @@ import { crearDonacionApi } from "../../helpers/queries";
 
 
 const FormularioCarga = () => {
-  const [donacion, setDoancion]=useState([])
-
-
   const {
     register,
     handleSubmit,
     formState: { errors },
     reset,
   } = useForm();
+
 
   const crearDonacion = async (data) => {
     console.log("Formulario enviado con datos:", data);
@@ -49,7 +47,7 @@ const FormularioCarga = () => {
       </h1>
       <div className="mx-auto max-w-md backdrop-filter backdrop-blur-sm bg-opacity-70 rounded-2xl p-5 bg-[#D6CC99]">
       <form
-          className="flex flex-col gap-4 bg-transparent"
+          className="flex flex-col gap-4 bg-transparent text-azul-oscuro"
           onSubmit={handleSubmit(crearDonacion)}
           encType="multipart/form-data"
           method="post"
@@ -133,7 +131,7 @@ const FormularioCarga = () => {
                 {...register("estado", { required: 'El estado es obligatorio' })}
               >
                 <option value="Usado">Usado</option>
-                <option value="Casi nuevo">Casi nuevo</option>
+                <option value="CasiNuevo">Casi nuevo</option>
               </select>
               {errors.estado && (
                 <span className="text-red-500">{errors.estado.message}</span>
@@ -151,13 +149,16 @@ const FormularioCarga = () => {
                 className="bg-white border border-gray-300 text-gray-700 py-2 px-4 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-200 focus:border-[#D6CC99]"
                 {...register("categoria", { required: 'Debe seleccionar una categoría'})}
               >
+                <option value="">Seleccionar Categoría</option>
+                <option value="Apuntes">Apuntes 📝</option>
+                <option value="Libros">Libros📚</option>
+                <option value="Ropa">Ropa👕</option>
                 <option value="Papel">Papel📄</option>
                 <option value="Plastico">Plástico🧴</option>
                 <option value="Vidrio">Vidrio🪞</option>
-                <option value="Ropa">Ropa👕</option>
-                <option value="Muebles">Muebles🪵</option>
                 <option value="Electrodomestico">Electrodoméstico🏠</option>
-                <option value="Tecnologia y Accesorios">Tecnología y Accesorios💻</option>
+                <option value="TecnologiaYaccesorios">Tecnología y Accesorios💻</option>
+                <option value="Muebles">Muebles🪵</option>
                 <option value="Herramientas">Herramientas🛠️</option>
                 <option value="Otros">Otros🎲</option>
               </select>
