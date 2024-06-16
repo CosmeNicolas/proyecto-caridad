@@ -1,14 +1,17 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
 import { useForm } from "react-hook-form";
 import { Input } from "@nextui-org/input";
 import { Button } from "@nextui-org/react";
 import { crearDonacionApi } from "../../helpers/queries";
-/* import { MdAddAPhoto } from "react-icons/md"; */
+import { useNavigate } from "react-router-dom";
+import Swal from 'sweetalert2'
+import ContextDonaciones from "../../context/DonacionesContext";
+
 
 
 const FormularioCarga = () => {
-  const [donacion, setDoancion]=useState([])
-
+  const direccionar = useNavigate()
+  const { setDonaciones} = useContext(ContextDonaciones)
 
   const {
     register,
@@ -16,6 +19,7 @@ const FormularioCarga = () => {
     formState: { errors },
     reset,
   } = useForm();
+
 
   const crearDonacion = async (data) => {
     console.log("Formulario enviado con datos:", data);
@@ -32,12 +36,34 @@ const FormularioCarga = () => {
     try {
       const respuesta = await crearDonacionApi(formData);
       if (respuesta.status === 201) {
-        console.log('Donación creada');
+        Swal.fire({
+          title: "Donación Creada",
+          text: "Gracias por colaborar",
+          icon: "success",
+          customClass: {
+            title: 'text-white',
+            popup: 'bg-[#001524]',
+            icon: 'text-green-300',
+            confirmButton: 'bg-green-500 hover:bg-green-600',
+          }
+        });
         reset();
+        setDonaciones(formData)
+        direccionar('/donaciones')
       }
-      setDoancion(formData)
     } catch (error) {
-      console.error('Error al crear la donación:', error);
+      console.log(error)
+      Swal.fire({
+        title: "Error",
+        text: "Error al cargar la donacion",
+        icon: "error",
+        customClass: {
+          title: 'text-white',
+          popup: 'bg-[#001524]',
+          icon: 'text-green-300',
+          confirmButton: 'bg-green-500 hover:bg-green-600',
+        }
+      });
     }
   };
  
@@ -49,7 +75,7 @@ const FormularioCarga = () => {
       </h1>
       <div className="mx-auto max-w-md backdrop-filter backdrop-blur-sm bg-opacity-70 rounded-2xl p-5 bg-[#D6CC99]">
       <form
-          className="flex flex-col gap-4 bg-transparent"
+          className="flex flex-col gap-4 bg-transparent text-azul-oscuro"
           onSubmit={handleSubmit(crearDonacion)}
           encType="multipart/form-data"
           method="post"
@@ -133,7 +159,7 @@ const FormularioCarga = () => {
                 {...register("estado", { required: 'El estado es obligatorio' })}
               >
                 <option value="Usado">Usado</option>
-                <option value="Casinuevo">Casi nuevo</option>
+                <option value="CasiNuevo">Casi nuevo</option>
               </select>
               {errors.estado && (
                 <span className="text-red-500">{errors.estado.message}</span>
@@ -151,13 +177,16 @@ const FormularioCarga = () => {
                 className="bg-white border border-gray-300 text-gray-700 py-2 px-4 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-200 focus:border-[#D6CC99]"
                 {...register("categoria", { required: 'Debe seleccionar una categoría'})}
               >
+                <option value="">Seleccionar Categoría</option>
+                <option value="Apuntes">Apuntes 📝</option>
+                <option value="Libros">Libros📚</option>
                 <option value="Ropa">Ropa👕</option>
                 <option value="Papel">Papel📄</option>
                 <option value="Plastico">Plástico🧴</option>
                 <option value="Vidrio">Vidrio🪞</option>
-                <option value="Muebles">Muebles🪵</option>
                 <option value="Electrodomestico">Electrodoméstico🏠</option>
-                <option value="Tecnologia y Accesorios">Tecnología y Accesorios💻</option>
+                <option value="TecnologiaYaccesorios">Tecnología y Accesorios💻</option>
+                <option value="Muebles">Muebles🪵</option>
                 <option value="Herramientas">Herramientas🛠️</option>
                 <option value="Otros">Otros🎲</option>
               </select>
@@ -217,7 +246,6 @@ const FormularioCarga = () => {
             type="submit"
             className="bg-[#445D48] text-white px-4 py-2 rounded-md" 
             size="lg"
-            color="secondary"
           >
             Enviar
           </Button>

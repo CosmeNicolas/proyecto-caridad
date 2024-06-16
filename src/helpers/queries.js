@@ -23,3 +23,14 @@ export const crearDonacionApi = async(nuevaDonacion) => {
         console.log(error);
     }
 }
+
+
+export const obtenerDonacionId = async (id) => {
+    try {
+      const respuesta = await fetch(`${URI_DONACIONES}/${id}`);
+      return respuesta;
+    } catch (error) {
+      console.error(error);
+    }
+  };
+  
