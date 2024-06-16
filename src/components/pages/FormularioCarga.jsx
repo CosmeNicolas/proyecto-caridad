@@ -48,7 +48,7 @@ const FormularioCarga = () => {
           }
         });
         reset();
-        setDonaciones(formDataasda)
+        setDonaciones(formData)
         direccionar('/donaciones')
       }
     } catch (error) {
