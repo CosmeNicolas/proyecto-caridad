@@ -28,8 +28,7 @@ const DetalleDonacion = () => {
   };
  
     return (
-      <section className="flex items-center justify-center py-8">
-       
+      <section className="flex items-center justify-center py-8 section-form imagen-back">
         <Card
           isBlurred
           className="border-none  dark:bg-default-100/50 max-w-[610px] backdrop-blur font-oswald my-3"
@@ -42,7 +41,6 @@ const DetalleDonacion = () => {
               radius="sm"
               src={logo}
               width={40}
-              
             />
             <div className="flex flex-col text-white">
               <p className="text-md font-oswald font-bold mx-3 ">TucuManos🤝</p>
@@ -52,51 +50,65 @@ const DetalleDonacion = () => {
           {/* <hr className="mx-4 rounded-md border border-solid border-verde-militar" /> */}
           <CardBody className="flex flex-row  ">
             {/* imagen */}
-              <Image
-                alt="Album cover"
-                className="object-cover border-2 border-azul-oscuro"
-                height={200}
-                shadow="md"
-                src={donacion.imagenDonacion}
-                width="100%"
-              />
+            <Image
+              alt="Album cover"
+              className="object-cover border-2 border-azul-oscuro"
+              height={200}
+              shadow="md"
+              src={donacion.imagenDonacion}
+              width="100%"
+            />
             {/* detalle */}
             <div className="text-center px-8 text-azul-oscuro flex flex-col  justify-center">
-              <h1 className="font-oswald font-bold text-xl">{donacion.nombreDonacion}</h1>
+              <h1 className="font-oswald font-bold text-xl">
+                {donacion.nombreDonacion}
+              </h1>
               <hr className="mx-10 rounded-md  border border-solid border-verde-militar" />
               <div className="mt-3">
                 <ul>
-                <li className="text-start"><span className="text-lg font-bold">Cooperador:</span><p className="font-oswald 
-                text-lg mt-1">
-                    {donacion.nombreCooperador}
-                  </p>
+                  <li className="text-start">
+                    <span className="text-lg font-bold">Cooperador:</span>
+                    <p
+                      className="font-oswald 
+                text-lg mt-1"
+                    >
+                      {donacion.nombreCooperador}
+                    </p>
                   </li>
-                  <li className="text-start"><span className="text-lg font-bold">Descripcion:</span>
-                  <p className="text-lg mt-1">
-                    {donacion.descripcion}
-                  </p>
+                  <li className="text-start">
+                    <span className="text-lg font-bold">Descripcion:</span>
+                    <p className="text-lg mt-1">{donacion.descripcion}</p>
                   </li>
                   <li className="mt-3">
                     <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
                       {donacion.estado}
                     </span>
                     <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
-                    {donacion.categoria}
+                      {donacion.categoria}
                     </span>
                   </li>
                 </ul>
               </div>
+
               <Button
-              as={Link}
-                    to={`https://wa.me/${donacion.numeroContacto}?text=Hola%20${donacion.nombreCooperador}%2C%20estoy%20interesado%20en%20la%20donación%20${donacion.nombreDonacion}`}
-                    className="bg-green-600 hover:bg-green-600  text-white shadow-lg mt-4"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    size="lg"
-                  >
-                    Contactar
-                  <FaWhatsapp />
-                  </Button>
+                as={Link}
+                to={`/detalleDonacion/${donacion._id}`}
+                className="bg-[#9d0964] hover:bg-[#5b0439] text-white shadow-lg mt-4"
+              >
+                Eliminar
+                <FaWhatsapp />
+              </Button>
+              <Button
+                as={Link}
+                to={`https://wa.me/${donacion.numeroContacto}?text=Hola%20${donacion.nombreCooperador}%2C%20estoy%20interesado%20en%20la%20donación%20${donacion.nombreDonacion}`}
+                className="bg-green-600 hover:bg-green-600  text-white shadow-lg mt-4"
+                target="_blank"
+                rel="noopener noreferrer"
+                size="lg"
+              >
+                Contactar
+                <FaWhatsapp />
+              </Button>
             </div>
           </CardBody>
         </Card>
