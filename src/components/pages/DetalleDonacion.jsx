@@ -32,35 +32,34 @@ const DetalleDonacion = () => {
        
         <Card
           isBlurred
-          className="border-none bg-verde-tierra dark:bg-default-100/50 max-w-[610px] backdrop-blur font-oswald my-3"
+          className="border-none  dark:bg-default-100/50 max-w-[610px] backdrop-blur font-oswald my-3"
           shadow="sm"
         >
-          <CardHeader className="flex gap-3  justify-center">
+          <CardHeader className="flex gap-3 justify-center  bg-azul-oscuro/85 backdrop-blur-3xlxl rounded-sm">
             <Image
               alt="nextui logo"
               height={40}
               radius="sm"
               src={logo}
               width={40}
+              
             />
-            <div className="flex flex-col">
-              <p className="text-md">Tucu-Manos</p>
-              <p className="text-small text-default-500">Detalle Donación</p>
+            <div className="flex flex-col text-white">
+              <p className="text-md font-oswald font-bold mx-3 ">TucuManos🤝</p>
+              <p className="text-small font-mono">Detalle Donación</p>
             </div>
           </CardHeader>
-          <hr className="mx-4 rounded-md border border-solid border-verde-militar" />
-          <CardBody className="flex flex-row ">
+          {/* <hr className="mx-4 rounded-md border border-solid border-verde-militar" /> */}
+          <CardBody className="flex flex-row  ">
             {/* imagen */}
-            <div>
               <Image
                 alt="Album cover"
-                className="object-cover"
+                className="object-cover border-2 border-azul-oscuro"
                 height={200}
                 shadow="md"
                 src={donacion.imagenDonacion}
                 width="100%"
               />
-            </div>
             {/* detalle */}
             <div className="text-center px-8 text-azul-oscuro flex flex-col  justify-center">
               <h1 className="font-oswald font-bold text-xl">{donacion.nombreDonacion}</h1>

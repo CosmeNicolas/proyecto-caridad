@@ -1,4 +1,4 @@
-import React, { useContext} from "react";
+import React, { useContext, useState} from "react";
 import { useForm } from "react-hook-form";
 import { Input } from "@nextui-org/input";
 import { Button } from "@nextui-org/react";
@@ -12,6 +12,7 @@ import ContextDonaciones from "../../context/DonacionesContext";
 const FormularioCarga = () => {
   const direccionar = useNavigate()
   const {setDonaciones} = useContext(ContextDonaciones)
+   const [isLoading, setIsLoading] = useState(false);
 
   const {
     register,
@@ -22,6 +23,7 @@ const FormularioCarga = () => {
 
 
   const crearDonacion = async (data) => {
+    setIsLoading(true);
     console.log("Formulario enviado con datos:", data);
 
     const formData = new FormData();
@@ -64,9 +66,9 @@ const FormularioCarga = () => {
           confirmButton: 'bg-green-500 hover:bg-green-600',
         }
       });
-    }/* finally{
-      setCargando(false)
-    } */
+    } finally {
+      setIsLoading(false); // Detiene el spinner después de la operación
+    }
   };
  
 
@@ -246,11 +248,12 @@ const FormularioCarga = () => {
           {/* BTN ENVIO */}
           
           <Button
+            isLoading={isLoading}
             type="submit"
             className="bg-[#445D48] text-white px-4 py-2 rounded-md" 
             size="lg"
           >
-            Enviar
+           {isLoading ? 'Cargando Donación...' : 'Enviar'}
           </Button>
         </form>
       </div>
