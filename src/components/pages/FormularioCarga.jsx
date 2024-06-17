@@ -73,11 +73,15 @@ const FormularioCarga = () => {
  
 
   return (
-    <section className="flex-grow bg-[#001524] mb-4">
-      <h1 className="text-center py-6 text-3xl font-bold text-white">
-        Ingresar Donación
+    <section className="flex-grow  bg-center   items-center justify-center w-screen flex imagen-back">
+     
+      <div className="mx-auto max-w-md backdrop-filter backdrop-blur-md bg-opacity-70 rounded-2xl p-5 bg-[#00000034] ">
+      <div className="font-mono bg-azul-oscuro rounded-xl p-2">
+      <h1 className="text-center text-2xl font-bold text-white font-oswald ">
+       INGRESAR DONACIÓN
       </h1>
-      <div className="mx-auto max-w-md backdrop-filter backdrop-blur-sm bg-opacity-70 rounded-2xl p-5 bg-[#D6CC99]">
+      <p className="text-center text-gray-300">#ReciclaDesdeCasa</p>
+      </div>
       <form
           className="flex flex-col gap-4 bg-transparent text-azul-oscuro"
           onSubmit={handleSubmit(crearDonacion)}
@@ -85,11 +89,12 @@ const FormularioCarga = () => {
           method="post"
         >
           {/* IMAGEN */}
-          <div>
-            <label htmlFor="imagenDonacion" className="text-white">
+          <div className="mt-3">
+            <label htmlFor="imagenDonacion" className="text-white ">
               Agregar Imagen
             </label>
             <input
+              className="flex flex-col"
               id="imagenDonacion"
               type="file"
               {...register("imagenDonacion", { required: 'La imagen es obligatoria' })}
@@ -250,7 +255,7 @@ const FormularioCarga = () => {
           <Button
             isLoading={isLoading}
             type="submit"
-            className="bg-[#445D48] text-white px-4 py-2 rounded-md" 
+            className="bg-[#276231] text-white px-4 py-2 rounded-md" 
             size="lg"
           >
            {isLoading ? 'Cargando Donación...' : 'Enviar'}

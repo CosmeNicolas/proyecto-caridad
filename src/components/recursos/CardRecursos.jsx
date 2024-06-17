@@ -8,14 +8,15 @@ import tacho from '../../assets/img/supertacho.png'
 
 const CardRecursos = () => {
   const {donaciones, donacionesApi} = useContext(ContextDonaciones)
+
   useEffect(() => {
     donacionesApi()
   }, [])
   
-  
+
   return (
     <>
-<section className="flex flex-wrap justify-center gap-3">
+<section className="flex flex-wrap justify-center gap-3 imagen-back">
   {donaciones && donaciones.length > 0 ? (
     donaciones.map((donacion) => (
       <div
@@ -57,7 +58,8 @@ const CardRecursos = () => {
               </span>
             </div>
             <hr />
-            <Button
+        
+          <Button
               as={Link}
               to={`/detalleDonacion/${donacion._id}`}
               className="bg-[#001524] hover:bg-[#001524] text-white shadow-lg mt-4"
@@ -65,6 +67,7 @@ const CardRecursos = () => {
               Ver Detalle
               <FaWhatsapp />
             </Button>
+        
           </CardBody>
         </Card>
       </div>
@@ -73,7 +76,7 @@ const CardRecursos = () => {
     <Card
       isFooterBlurred
       radius="lg"
-      className="border-none bg-azul-oscuro my-3"
+      className="border-none backdrop-filter backdrop-blur-md bg-opacity-70 rounded-2xl p-5 bg-[#8b89892a] my-3 mx-1"
     >
       <CardBody className="text-center text-azul-oscuro font-bold bg-verde-tierra rounded-xl">
         <p>"El medio ambiente está limpio."</p>

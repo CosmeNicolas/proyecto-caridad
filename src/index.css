@@ -21,3 +21,32 @@ select focus option:checked {
     background-color: #D6CC99; /* Color de fondo para la opción seleccionada cuando el select está enfocado */
     color: white; /* Color de texto para la opción seleccionada cuando el select está enfocado */
 }
+
+
+.imagen-back{
+    background-image: url(./assets/img/rrr-web.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+@media screen and (max-width: 767px){
+   
+.imagen-back{
+    background-image:url(./assets/img/rrr-mobile.png) ;
+     background-position: center;
+     background-repeat:no-repeat;
+     width: 100%;
+     background-size: cover;
+}
+  }
+
+  @media all and (min-width: 768px) and (max-width: 991px){
+      
+.imagen-back{
+    background-image:url(./assets/img/rrr-web.png) ;
+     background-position: center;
+     background-repeat:no-repeat;
+     width: 100%;
+     background-size: cover;
+}
+  }
