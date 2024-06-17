@@ -5,8 +5,8 @@ import { Link } from 'react-router-dom';
 
  const Inicio = () => {
    return (
-     <section className="flex-grow flex justify-center items-center flex-col  mt-3">
-       <div>
+     <section className="flex-grow-1 flex justify-center items-center flex-col  mt-3">
+       <div className='mt-8'>
          <img className="animate-pulse" src={logo} alt="Card-image" />
        </div>
        <div className="text-center">
