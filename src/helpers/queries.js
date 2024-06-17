@@ -24,7 +24,7 @@ export const crearDonacionApi = async(nuevaDonacion) => {
     }
 }
 
-
+//obtener donacion por id 
 export const obtenerDonacionId = async (id) => {
     try {
       const respuesta = await fetch(`${URI_DONACIONES}/${id}`);
@@ -33,4 +33,20 @@ export const obtenerDonacionId = async (id) => {
       console.error(error);
     }
   };
+
+//eliminar donacion
   
+export const eliminarDonacionApi = async (id) => {
+  try {
+    const respuesta = await fetch(`${URI_DONACIONES}/${id}`, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    const resultado = await respuesta.json();
+    return resultado;
+  } catch (error) {
+    console.error(error);
+  }
+};

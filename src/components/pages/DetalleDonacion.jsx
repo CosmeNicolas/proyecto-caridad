@@ -1,17 +1,63 @@
 import React, {useEffect, useState } from "react";
 import {Card, CardBody, Image,CardHeader,Button} from "@nextui-org/react";
 import { FaWhatsapp } from "react-icons/fa";
-import { Link, useParams } from "react-router-dom";
-import { obtenerDonacionId } from "../../helpers/queries";
+import { Link, useNavigate, useParams } from "react-router-dom";
+import { eliminarDonacionApi, obtenerDonacionId } from "../../helpers/queries";
 import logo from "../../assets/img/logo-provisorio.png";
+import Swal from 'sweetalert2'
 
 
 const DetalleDonacion = () => {
   const {id} = useParams()
   const [donacion, setdonacion] = useState('')
+  const direccionar = useNavigate()
 
- 
 
+ const handleEliminarDonacion = async(id)=>{
+  Swal.fire({
+    html: `<p class="text-[#fff] font-bold">Estas seguro de que quieres eliminar  <span class="text-[#d22121] font-bold">${donacion.nombreDonacion}</span> ?</p>`,
+    icon: "warning",
+    showCancelButton: true,
+    customClass: {
+      popup: 'bg-[#001524]'
+    },
+    confirmButtonColor: "#445D48",
+    cancelButtonColor: "#d33",
+    confirmButtonText: "Borrar",
+    cancelButtonText: "Cancelar",
+  }).then(async (result) => {
+    if (result.isConfirmed) {
+      try {
+        await eliminarDonacionApi(id);
+        Swal.fire({
+          title: "Borrado!",
+          html: `<p class="text-[#fff] font-bold">Su Donación: <span class="text-[#d33] font-bold">${donacion.nombreDonacion}</span> ha sido borrada!</p>`,
+          icon: "success",
+          customClass: {
+            title: 'text-white',
+            popup: 'bg-[#001524]',
+            icon: 'text-green-300',
+            confirmButton: 'bg-[001524]',
+          },
+          confirmButtonColor: "#445D48",
+        });
+       setdonacion();
+       direccionar('/donaciones')
+      } catch (error) {
+        console.error(error);
+        Swal.fire({
+          title: "Ops!",
+          text: `Se produjo un error intente mas tarde`,
+          icon: "error",
+          customClass: {
+            popup: "contenedor-sweet",
+          },
+          confirmButtonColor: "#B79B63",
+        });
+      }
+    }
+  });
+};
   useEffect(() => {
     mostrarDonacionid()
   }, [])
@@ -89,11 +135,12 @@ const DetalleDonacion = () => {
                   </li>
                 </ul>
               </div>
-
+              {/* boton ELiminar */}
               <Button
                 as={Link}
                 to={`/detalleDonacion/${donacion._id}`}
-                className="bg-[#9d0964] hover:bg-[#5b0439] text-white shadow-lg mt-4"
+                className="bg-[#710347] hover:bg-[#5b0439] text-white shadow-lg mt-4"
+                onClick={()=>handleEliminarDonacion(donacion._id)}
               >
                 Eliminar
                 <FaWhatsapp />
