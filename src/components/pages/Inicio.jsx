@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
  const Inicio = () => {
    return (
      <section className="flex-grow-1 h-screen flex justify-center items-center flex-col imagen-back">
-      <div className='backdrop-filter text-center backdrop-blur-sm bg-opacity-70 bg-azul-oscuro rounded-2xl p-3'>
+      <div className='backdrop-filter text-center backdrop-blur-sm bg-opacity-70 bg-[#3434344e] rounded-2xl p-3'>
        
        <div className="text-center flex flex-col items-center justify-center">
          <img className="animate-pulse" src={logo} alt="Card-image" />
