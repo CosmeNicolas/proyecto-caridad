@@ -24,7 +24,7 @@ select focus option:checked {
 
 
 .imagen-back{
-    background-image: url(./assets/img/rrr-web.png);
+    background-image: url(./assets/img/logo.png);
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -32,7 +32,7 @@ select focus option:checked {
 @media screen and (max-width: 767px){
    
 .imagen-back{
-    background-image:url(./assets/img/rrr-mobile.png) ;
+    background-image: url(./assets/img/logo.png);
      background-position: center;
      background-repeat:no-repeat;
      width: 100%;
@@ -43,10 +43,8 @@ select focus option:checked {
   @media all and (min-width: 768px) and (max-width: 991px){
       
 .imagen-back{
-    background-image:url(./assets/img/rrr-web.png) ;
+     background-image: url(./assets/img/logo.png);
      background-position: center;
      background-repeat:no-repeat;
-     width: 100%;
-     background-size: cover;
 }
   }
