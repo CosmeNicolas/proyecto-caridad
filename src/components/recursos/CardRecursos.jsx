@@ -73,7 +73,7 @@ const CardRecursos = () => {
     <Card
       isFooterBlurred
       radius="lg"
-      className="border-none bg-azul-oscuro"
+      className="border-none bg-azul-oscuro my-3"
     >
       <CardBody className="text-center text-azul-oscuro font-bold bg-verde-tierra rounded-xl">
         <p>"El medio ambiente está limpio."</p>
