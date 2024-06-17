@@ -42,7 +42,6 @@ const DetalleDonacion = () => {
               radius="sm"
               src={logo}
               width={40}
-              
             />
             <div className="flex flex-col text-white">
               <p className="text-md font-oswald font-bold mx-3 ">TucuManos🤝</p>
@@ -52,14 +51,16 @@ const DetalleDonacion = () => {
           {/* <hr className="mx-4 rounded-md border border-solid border-verde-militar" /> */}
           <CardBody className="flex flex-row  ">
             {/* imagen */}
+            <div className="flex  items-center">
               <Image
                 alt="Album cover"
-                className="object-cover border-2 border-azul-oscuro"
-                height={200}
+                className="object-cover border-2 border-azul-oscuro items-center"
                 shadow="md"
                 src={donacion.imagenDonacion}
                 width="100%"
+                height="100%"
               />
+            </div>
             {/* detalle */}
             <div className="text-center px-8 text-azul-oscuro flex flex-col  justify-center">
               <h1 className="font-oswald font-bold text-xl">{donacion.nombreDonacion}</h1>
