@@ -24,7 +24,7 @@ select focus option:checked {
 
 
 .imagen-back{
-    background-image: url(./assets/img/logo.png);
+    background-image: url(./assets/img/centro-logo.png);
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -47,4 +47,12 @@ select focus option:checked {
      background-position: center;
      background-repeat:no-repeat;
 }
+  }
+
+  @media (min-width: 1024px){
+    .imagen-back{
+        background-image: url(./assets/img/logo.png);
+        background-position: center;
+        background-repeat:no-repeat;
+   }
   }
