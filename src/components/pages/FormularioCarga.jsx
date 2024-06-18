@@ -73,7 +73,7 @@ const FormularioCarga = () => {
  
 
   return (
-    <section className="flex-grow  bg-center   items-center justify-center w-screen flex imagen-back">
+    <section className="flex-grow  bg-center h-screen  items-center justify-center w-screen flex imagen-back">
      
       <div className="mx-auto max-w-md backdrop-filter backdrop-blur-md bg-opacity-70 rounded-2xl p-5 bg-[#00000034] ">
       <div className="font-mono bg-azul-oscuro rounded-xl p-2">
