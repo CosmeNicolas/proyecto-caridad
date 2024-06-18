@@ -1,22 +1,24 @@
 import logo from '../../assets/img/logo-provisorio.png'
 import { AiFillPlusCircle } from "react-icons/ai";
 import { Link } from 'react-router-dom';
+import { TbHeartHandshake } from "react-icons/tb";
 
 
  const Inicio = () => {
    return (
      <section className="flex-grow-1 h-screen flex justify-center items-center flex-col imagen-back">
-         <img className="animate-pulse" src={logo} alt="Card-image" />
-         <h1 className="text-[#005e2f9f] text-center text-3xl font-bold font-oswald">
-         🍃Tucu🤝Manos🌱
+         <img className="mr-6 animate-pulse  " src={logo} alt="Card-image" />
+         <h1 className="text-[#102C57]  text-3xl font-bold font-oswald flex flex-row py-2 ml-4">
+          Tucu <span><TbHeartHandshake className='text-[#005e2fc9] mx-1' /></span>
+         Manos
          </h1>
          {/* <h2 className="text-gray-300 text-xl italic font-oswald ">
          "Unidos por un futuro sustentable"
           </h2> */}
         
-          <Link to="/formulario" className="bg-[#445D48] hover:bg-[#D6CC99] hover:text-azul-oscuro text-white font-bold py-3 px-10 rounded-full my-3 text-xl font-oswald">
+          <Link to="/formulario" className="bg-[#445D48] hover:bg-[#D6CC99] hover:text-azul-oscuro text-white font-bold py-3 px-10 rounded-full  text-2xl font-oswald flex flex-col items-center justify-center">
                <p>Agregar Donación</p>
-               <AiFillPlusCircle className="font-extrabold text-3xl text-center mx-auto mt-2" />
+               <AiFillPlusCircle className="font-extrabold text-3xl mr-2  " />
            </Link>
      </section>
    );
