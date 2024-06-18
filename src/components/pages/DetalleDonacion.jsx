@@ -94,7 +94,7 @@ const DetalleDonacion = () => {
             </div>
           </CardHeader>
           {/* <hr className="mx-4 rounded-md border border-solid border-verde-militar" /> */}
-          <CardBody className="flex flex-row  ">
+          <CardBody className="flex lg:flex-row  ">
             {/* imagen */}
             <Image
               alt="Album cover"
