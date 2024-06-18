@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
    return (
      <section className="flex-grow-1 h-screen flex justify-center items-center flex-col imagen-back">
          <img className="animate-pulse" src={logo} alt="Card-image" />
-         <h1 className="text-azul-oscuro text-center text-3xl font-bold font-oswald">
+         <h1 className="text-[#005e2f9f] text-center text-3xl font-bold font-oswald">
          🍃Tucu🤝Manos🌱
          </h1>
          {/* <h2 className="text-gray-300 text-xl italic font-oswald ">
