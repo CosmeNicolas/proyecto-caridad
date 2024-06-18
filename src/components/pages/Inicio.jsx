@@ -7,7 +7,7 @@ import { TbHeartHandshake } from "react-icons/tb";
  const Inicio = () => {
    return (
      <section className="flex-grow-1 h-screen flex justify-center items-center flex-col imagen-back">
-         <img className="mr-6 animate-pulse  " src={logo} alt="Card-image" />
+         <img className="mr-5 animate-pulse  " src={logo} alt="Card-image" />
          <h1 className="text-[#102C57]  text-3xl font-bold font-oswald flex flex-row py-2 ml-4">
           Tucu <span><TbHeartHandshake className='text-[#005e2fc9] mx-1' /></span>
          Manos
