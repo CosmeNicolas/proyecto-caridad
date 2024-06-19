@@ -1,7 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
 /* 
 #001524
 #445D48
@@ -27,6 +27,12 @@ select focus option:checked {
     background-image: url(./assets/img/centro-logo.png);
     background-repeat: no-repeat;
     background-size: cover;
+    .ubuntu-medium-italic {
+        font-family: "Ubuntu", sans-serif;
+        font-weight: 500;
+        font-style: italic;
+      }
+      
 }
 
 @media screen and (max-width: 767px){

@@ -5,6 +5,7 @@ import { BsInstagram } from "react-icons/bs";
 import { BsLinkedin } from "react-icons/bs";
 import { BsFillThreadsFill } from "react-icons/bs";
 import { Link } from 'react-router-dom';
+import { BsHeartFill } from "react-icons/bs";
 
 const Footer = () => {
   return (
@@ -14,7 +15,7 @@ const Footer = () => {
           <p className="text-lg text-slate-200">
             &copy; Todos los derechos reservados
           </p>
-          <p className=" text-slate-200 text-lg ">Hecho con 💚 </p>
+          <p className=" text-slate-200 text-lg flex flex-row justify-center ">Hecho con <BsHeartFill className='text-[#027039c9] m-1' /> </p>
         </div>
       </article>
       <article>

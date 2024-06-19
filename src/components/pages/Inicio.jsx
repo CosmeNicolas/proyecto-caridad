@@ -8,7 +8,7 @@ import { TbHeartHandshake } from "react-icons/tb";
    return (
      <section className="flex-grow-1 h-screen flex justify-center items-center flex-col imagen-back">
          <img className="mr-5 animate-pulse  " src={logo} alt="Card-image" />
-         <h1 className="text-[#102C57]  text-3xl font-bold font-oswald flex flex-row py-2 ml-4">
+         <h1 className="text-[#473B23]  text-3xl font-bold font-oswald flex flex-row py-2 ml-4">
           Tucu <span><TbHeartHandshake className='text-[#005e2fc9] mx-1' /></span>
          Manos
          </h1>
@@ -16,7 +16,7 @@ import { TbHeartHandshake } from "react-icons/tb";
          "Unidos por un futuro sustentable"
           </h2> */}
         
-          <Link to="/formulario" className="bg-[#445D48] hover:bg-[#D6CC99] hover:text-azul-oscuro text-white font-bold py-3 px-10 rounded-full  text-2xl font-oswald flex flex-col items-center justify-center">
+          <Link to="/formulario" className="bg-[#245027] hover:bg-[#D6CC99] hover:text-azul-oscuro text-white font-bold py-3 px-10 rounded-full  text-2xl font-oswald flex flex-col items-center justify-center">
                <p>Agregar Donación</p>
                <AiFillPlusCircle className="font-extrabold text-3xl mr-2  " />
            </Link>
