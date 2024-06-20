@@ -9,7 +9,7 @@ const NavBar = () => {
 
   return (
     <>
-      <Navbar className="text-dark bg-[#35443770] font-oswald" onMenuOpenChange={setIsMenuOpen}>
+      <Navbar className="text-dark bg-[#35443770]  font-oswald" onMenuOpenChange={setIsMenuOpen}>
         <NavbarContent>
           <NavbarBrand>
             <Link to='/'>
@@ -49,21 +49,21 @@ const NavBar = () => {
           </NavbarItem>
         </NavbarContent>
 
-      <NavbarMenu className="sm:hidden mx-auto  bg-azul-oscuro  shadow-lg  overflow-y-auto flex flex-col justify-center" >
+      <NavbarMenu className="sm:hidden mx-auto  backdrop-filter backdrop-blur-md bg-opacity-70 rounded-2xl p-5 bg-[#8b89892a]  shadow-lg  overflow-y-auto flex flex-col justify-center" >
 {/*       <NavbarBrand className="flex flex-col justify-center"> */}
             <Link to='/'>
               <img className="mx-auto" src={logo} alt="logo" />
-              <p className= "text-center text-verde-tierra">#ReciclaDesdeCasa</p>
+              <p className= "text-center text-[#473B23] font-bold text-lg">#ReciclaDesdeCasa</p>
             </Link>
-    {/*       </NavbarBrand> */}
+    {/*       </NavbarBrand> text-[#027039c9]  */}
           <NavbarMenuItem>
-            <Button variant="bordered" as={Link} className="text-white w-full flex justify-center font-bold my-1" to='/'>
+            <Button variant="bordered" as={Link} className="w-full flex justify-center font-bold my-1 bg-verde-militar border-black text-white" to='/'>
               Inicio
             </Button>
-            <Button variant="bordered" as={Link} className="text-white w-full flex justify-center font-bold my-1" to='/donaciones'>
+            <Button variant="bordered" as={Link} className="w-full flex justify-center font-bold bg-verde-militar border-black text-white my-1" to='/donaciones'>
               Donaciones
             </Button>
-            <Button variant="bordered" as={Link} className="text-white w-full flex justify-center font-bold my-1" to='/formulario'>
+            <Button variant="bordered" as={Link} className="w-full flex justify-center font-bold bg-verde-militar border-black text-white my-1" to='/formulario'>
               Formulario
             </Button>
           </NavbarMenuItem>
