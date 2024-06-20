@@ -1,5 +1,5 @@
 const URI_DONACIONES=import.meta.env.VITE_API_DONACIONES 
-console.log(URI_DONACIONES)
+
 //leer las donaciones disponibles
 export const leerDonaciones =async ()=>{
     try {
