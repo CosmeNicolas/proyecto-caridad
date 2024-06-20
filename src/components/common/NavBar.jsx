@@ -49,7 +49,13 @@ const NavBar = () => {
           </NavbarItem>
         </NavbarContent>
 
-        <NavbarMenu className="sm:hidden w-3/6 mx-auto mt-2 bg-azul-oscuro rounded-lg shadow-lg max-h-[25vh] overflow-y-auto flex flex-col justify-center" >
+      <NavbarMenu className="sm:hidden mx-auto  bg-azul-oscuro  shadow-lg  overflow-y-auto flex flex-col justify-center" >
+{/*       <NavbarBrand className="flex flex-col justify-center"> */}
+            <Link to='/'>
+              <img className="mx-auto" src={logo} alt="logo" />
+              <p className= "text-center text-verde-tierra">#ReciclaDesdeCasa</p>
+            </Link>
+    {/*       </NavbarBrand> */}
           <NavbarMenuItem>
             <Button variant="bordered" as={Link} className="text-white w-full flex justify-center font-bold my-1" to='/'>
               Inicio
