@@ -1,4 +1,4 @@
-import { Navbar, NavbarBrand, NavbarContent, NavbarItem, NavbarMenuToggle, NavbarMenu, NavbarMenuItem } from "@nextui-org/react";
+import { Navbar, NavbarBrand, NavbarContent, NavbarItem, NavbarMenuToggle, NavbarMenu, NavbarMenuItem, Button } from "@nextui-org/react";
 import { useState } from 'react';
 import logo from '../../assets/img/logo-provisorio.png';
 import { Link, useLocation } from "react-router-dom";
@@ -18,7 +18,7 @@ const NavBar = () => {
           </NavbarBrand>
           <NavbarMenuToggle
             aria-label={isMenuOpen ? "Close menu" : "Open menu"}
-            className="sm:hidden menu-toggle"
+            className="sm:hidden  menu-toggle"
           />
         </NavbarContent>
 
@@ -49,17 +49,17 @@ const NavBar = () => {
           </NavbarItem>
         </NavbarContent>
 
-        <NavbarMenu>
+        <NavbarMenu className="sm:hidden w-3/6 mx-auto mt-2 bg-azul-oscuro rounded-lg shadow-lg max-h-[25vh] overflow-y-auto flex flex-col justify-center" >
           <NavbarMenuItem>
-            <Link className="w-full flex justify-center font-bold" to='/'>
+            <Button variant="bordered" as={Link} className="text-white w-full flex justify-center font-bold my-1" to='/'>
               Inicio
-            </Link>
-            <Link className="w-full flex justify-center font-bold" to='/donaciones'>
+            </Button>
+            <Button variant="bordered" as={Link} className="text-white w-full flex justify-center font-bold my-1" to='/donaciones'>
               Donaciones
-            </Link>
-            <Link className="w-full flex justify-center font-bold" to='/formulario'>
+            </Button>
+            <Button variant="bordered" as={Link} className="text-white w-full flex justify-center font-bold my-1" to='/formulario'>
               Formulario
-            </Link>
+            </Button>
           </NavbarMenuItem>
         </NavbarMenu>
       </Navbar>
