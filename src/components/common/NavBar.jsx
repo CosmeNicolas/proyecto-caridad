@@ -31,20 +31,20 @@ const NavBar = () => {
               Inicio
             </Link>
           </NavbarItem>
-          <NavbarItem isActive={location.pathname === '/formulario'}>
-            <Link
-              to="/formulario"
-              className={`font-bold   ${location.pathname === '/formulario' ? ' rounded-md bg-[#D6CC99] p-2 text-[#001524]' : 'text-[#D6CC99]'}`}
-            >
-              Cooperar
-            </Link>
-          </NavbarItem>
           <NavbarItem  isActive={location.pathname === '/donaciones'}>
             <Link
               to="/donaciones"
               className={` font-bold   ${location.pathname === '/donaciones' ? ' rounded-md bg-[#D6CC99] p-2 text-[#001524]' : ' text-[#D6CC99]'}`}
             >
               Donaciones
+            </Link>
+          </NavbarItem>
+          <NavbarItem isActive={location.pathname === '/formulario'}>
+            <Link
+              to="/formulario"
+              className={`font-bold   ${location.pathname === '/formulario' ? ' rounded-md bg-[#D6CC99] p-2 text-[#001524]' : 'text-[#D6CC99]'}`}
+            >
+              Formulario Donación
             </Link>
           </NavbarItem>
         </NavbarContent>
@@ -64,7 +64,7 @@ const NavBar = () => {
               Donaciones
             </Button>
             <Button variant="bordered" as={Link} className="w-full flex justify-center font-bold bg-verde-militar border-black text-white my-1" to='/formulario'>
-              Formulario
+              Formulario Donación
             </Button>
           </NavbarMenuItem>
         </NavbarMenu>
