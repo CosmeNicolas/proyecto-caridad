@@ -83,14 +83,14 @@ const FormularioCarga = () => {
       <p className="text-center text-gray-300">#ReciclaDesdeCasa</p>
       </div>
       <form
-          className="flex flex-col gap-4 bg-transparent text-azul-oscuro"
+          className="flex flex-col gap-4 bg-transparent text-azul-oscuro "
           onSubmit={handleSubmit(crearDonacion)}
           encType="multipart/form-data"
           method="post"
         >
           {/* IMAGEN */}
           <div className="mt-3">
-            <label htmlFor="imagenDonacion" className="text-white ">
+            <label htmlFor="imagenDonacion" className="text-verde-militar  font-bold font-oswald">
               Agregar Imagen
             </label>
             <input
@@ -105,7 +105,7 @@ const FormularioCarga = () => {
           </div>
           {/* NOMBRE DONACION */}
           <div>
-            <label htmlFor="nombreDonacion" className="text-white">
+            <label htmlFor="nombreDonacion" className="text-verde-militar font-bold font-oswald">
               Nombre Donación
             </label>
             <Input
@@ -130,7 +130,7 @@ const FormularioCarga = () => {
           </div>
           {/* DESCRIPCION */}
           <div>
-            <label  htmlFor="descripcion" className="text-white">
+            <label  htmlFor="descripcion" className="text-verde-militar font-bold font-oswald">
               Agregar descripción
             </label>
             <Input
@@ -157,7 +157,7 @@ const FormularioCarga = () => {
           <div className="flex flex-wrap justify-between">
             {/* ESTADO DONACION */}
             <div className="flex flex-col">
-              <label id="estadolabel" htmlFor="estado" className="text-white">
+              <label id="estadolabel" htmlFor="estado" className="text-verde-militar font-bold font-oswald">
                 Estado
               </label>
               <select
@@ -176,7 +176,7 @@ const FormularioCarga = () => {
             </div>
             {/* CATEGORIA */}
             <div className="flex flex-col">
-              <label htmlFor="categoria" className="text-white">
+              <label htmlFor="categoria" className="text-verde-militar font-bold font-oswald">
                 Categoría
               </label>
               <select
@@ -206,7 +206,7 @@ const FormularioCarga = () => {
           </div>
           {/* NOMBRE COOPERADOR */}
           <div>
-            <label htmlFor="nombreCooperador" className="text-white">
+            <label htmlFor="nombreCooperador" className="text-verde-militar font-bold font-oswald">
               Nombre cooperador
             </label>
             <Input
@@ -231,7 +231,7 @@ const FormularioCarga = () => {
           </div>
           {/* NUMERO CONTACTO */}
           <div>
-            <label htmlFor="numeroContacto" className="text-white">
+            <label htmlFor="numeroContacto" className="text-verde-militar font-bold font-oswald">
               Contacto
             </label>
             <Input
