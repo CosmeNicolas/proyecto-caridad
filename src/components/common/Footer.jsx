@@ -1,11 +1,8 @@
 import React from 'react'
-import { BsTwitterX } from "react-icons/bs";
-import { BsFacebook } from "react-icons/bs";
-import { BsInstagram } from "react-icons/bs";
-import { BsLinkedin } from "react-icons/bs";
+import { BsTwitterX,BsFacebook, BsInstagram,  BsLinkedin, BsHeartFill} from "react-icons/bs";
 import { BsFillThreadsFill } from "react-icons/bs";
 import { Link } from 'react-router-dom';
-import { BsHeartFill } from "react-icons/bs";
+import { FaWhatsapp } from "react-icons/fa";
 
 const Footer = () => {
   return (
@@ -49,7 +46,12 @@ const Footer = () => {
                 <BsFillThreadsFill className="text-[#000] mx-1" />
               </li>
             </Link>
-            
+           
+            <Link to='https://www.threads.net/@cosme_nicolas'>
+              <li>
+                <FaWhatsapp  className="text-[#000] mx-1" />
+              </li>
+            </Link>
           </ul>
         </div>
       </article>
