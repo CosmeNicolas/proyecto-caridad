@@ -7,6 +7,7 @@ import FormularioCarga from "./components/pages/FormularioCarga"
 import NavBar from "./components/common/NavBar"
 import Footer  from "./components/common/Footer"
 import DetalleDonacion from "./components/pages/DetalleDonacion"
+import { QuienSoy } from "./components/pages/QuienSoy";
 function App() {
   return (
    <>
@@ -20,6 +21,7 @@ function App() {
     <Route exact path='/donaciones' element={<CardRecursos/>}/>
     <Route exact path='/formulario' element={<FormularioCarga/>}/>
     <Route exact path='/detalleDonacion/:id' element={<DetalleDonacion/>}/>
+    <Route exact path='/ComoReciclar' element={<QuienSoy/>}/>
     </Routes>
   </DonacionesProvider>
   </div>

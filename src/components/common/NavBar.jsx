@@ -47,6 +47,14 @@ const NavBar = () => {
               Formulario Donación
             </Link>
           </NavbarItem>
+          <NavbarItem isActive={location.pathname === '/formulario'}>
+            <Link
+              to="/ComoReciclar"
+              className={`font-bold   ${location.pathname === '/ComoReciclar' ? ' rounded-md bg-[#D6CC99] p-2 text-[#001524]' : 'text-[#D6CC99]'}`}
+            >
+              Como Reciclar
+            </Link>
+          </NavbarItem>
         </NavbarContent>
 
       <NavbarMenu className="sm:hidden mx-auto  backdrop-filter backdrop-blur-md bg-opacity-70 rounded-2xl p-5 bg-[#8b89892a]  shadow-lg  overflow-y-auto flex flex-col justify-center" >
@@ -65,6 +73,9 @@ const NavBar = () => {
             </Button>
             <Button variant="bordered" as={Link} className="w-full flex justify-center font-bold bg-verde-militar border-black text-white my-1" to='/formulario'>
               Formulario Donación
+            </Button>
+            <Button variant="bordered" as={Link} className="w-full flex justify-center font-bold bg-verde-militar border-black text-white my-1" to='/ComoReciclar'>
+            Como Reciclar
             </Button>
           </NavbarMenuItem>
         </NavbarMenu>

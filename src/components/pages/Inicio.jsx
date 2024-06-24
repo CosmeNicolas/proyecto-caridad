@@ -20,6 +20,7 @@ import { TbHeartHandshake } from "react-icons/tb";
                <p>Agregar Donación</p>
                <AiFillPlusCircle className="font-extrabold text-3xl mr-2  " />
            </Link>
+           
      </section>
    );
  }
