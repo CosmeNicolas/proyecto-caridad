@@ -18,7 +18,7 @@ export const QuienSoy = () => {
                 </li>
                 <li className='mt-2'>
                   <span className='font-semibold'>Completa el formulario:</span>
-                  Completa el formulario con los detalles de tu donación, como el tipo de objeto, la condición, la cantidad y cualquier comentario adicional. Luego, envía el formulario.
+                  Completa el formulario con los detalles de tu donación, como el tipo de objeto, la condición y cualquier comentario adicional. Luego, envía el formulario.
                 </li>
                 <li className='mt-2'>
                   <span className='font-semibold'>Coordinación de la Entrega:</span>
