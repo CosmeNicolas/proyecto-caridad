@@ -8,11 +8,13 @@ import NavBar from "./components/common/NavBar"
 import Footer  from "./components/common/Footer"
 import DetalleDonacion from "./components/pages/DetalleDonacion"
 import { QuienSoy } from "./components/pages/QuienSoy";
+import LogoSoporte from "./components/common/LogoSoporte";
+
 function App() {
   return (
    <>
  <BrowserRouter>
- <div className="flex flex-col min-h-screen">
+ <div className="relative flex flex-col min-h-screen">
    <NavBar/>
    <div className="flex-grow">
   <DonacionesProvider>
@@ -26,6 +28,7 @@ function App() {
   </DonacionesProvider>
   </div>
     <Footer/>
+    <LogoSoporte  /* className="absolute bottom-4 right-4" */ />
    </div>
    </BrowserRouter>
     </>

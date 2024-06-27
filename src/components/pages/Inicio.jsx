@@ -4,8 +4,10 @@ import { Link } from 'react-router-dom';
 import { TbHeartHandshake } from "react-icons/tb";
 
 
+
  const Inicio = () => {
    return (
+    <>
      <section className="flex-grow-1 h-screen flex justify-center items-center flex-col imagen-back">
          <img className="mr-5 animate-pulse  " src={logo} alt="Card-image" />
          <h1 className="text-[#473B23]  text-3xl font-bold font-oswald flex flex-row py-2 ml-4">
@@ -22,6 +24,8 @@ import { TbHeartHandshake } from "react-icons/tb";
            </Link>
            
      </section>
+         
+      </>
    );
  }
 
