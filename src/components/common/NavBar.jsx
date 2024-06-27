@@ -12,6 +12,7 @@ const NavBar = () => {
       <Navbar className="text-dark bg-[#35443770]  font-oswald" onMenuOpenChange={setIsMenuOpen}>
         <NavbarContent>
           <NavbarBrand>
+           
             <Link to='/'>
               <img className="w-[50px]" src={logo} alt="logo" />
             </Link>
