@@ -38,7 +38,7 @@ const CardRecursos = () => {
             <div className="px-6 pt-4 pb-2">
               <strong>Nombre Contacto:</strong>
               <p className="text-gray-700 text-base">
-                {donacion.nombreCooperador}
+                {donacion.nombrePersona}
               </p>
             </div>
             <div className="px-6 py-4 flex-1">

@@ -118,7 +118,7 @@ const DetalleDonacion = () => {
                       className="font-oswald 
                 text-lg mt-1"
                     >
-                      {donacion.nombreCooperador}
+                      {donacion.nombrePersona}
                     </p>
                   </li>
                   <li className="text-start">
@@ -145,7 +145,7 @@ const DetalleDonacion = () => {
               </Button> */}
               <Button
                 as={Link}
-                to={`https://wa.me/${donacion.numeroContacto}?text=Hola%20${donacion.nombreCooperador}%2C%20estoy%20interesado%20en%20la%20donación%20${donacion.nombreDonacion}`}
+                to={`https://wa.me/${donacion.numeroPersona}?text=Hola%20${donacion.nombrePersona}%2C%20estoy%20interesado%20en%20la%20donación%20${donacion.nombreDonacion}`}
                 className="bg-green-600 hover:bg-green-600  text-white shadow-lg mt-4"
                 target="_blank"
                 rel="noopener noreferrer"

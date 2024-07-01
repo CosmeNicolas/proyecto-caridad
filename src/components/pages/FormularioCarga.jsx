@@ -32,8 +32,8 @@ const FormularioCarga = () => {
     formData.append("descripcion", data.descripcion);
     formData.append("estado", data.estado);
     formData.append("categoria", data.categoria);
-    formData.append("nombreCooperador", data.nombreCooperador);
-    formData.append("numeroContacto", data.numeroContacto);
+    formData.append("nombrePersona", data.nombrePersona);
+    formData.append("numeroPersona", data.numeroPersona);
 
     try {
       const respuesta = await crearDonacionApi(formData);
@@ -206,14 +206,14 @@ const FormularioCarga = () => {
           </div>
           {/* NOMBRE COOPERADOR */}
           <div>
-            <label htmlFor="nombreCooperador" className="text-verde-militar font-bold font-oswald">
+            <label htmlFor="nombrePersona" className="text-verde-militar font-bold font-oswald">
               Nombre cooperador
             </label>
             <Input
-              id="nombreCooperador"
+              id="nombrePersona"
               type="text"
               placeholder="Nombre del cooperador"
-              {...register("nombreCooperador", { 
+              {...register("nombrePersona", { 
                 required: 'Este campo es obligatorio',
                 minLength: {
                   value: 2,
@@ -225,20 +225,20 @@ const FormularioCarga = () => {
                 }
               })}
             />
-            {errors.nombreCooperador && (
-              <span className="text-red-500">{errors.nombreCooperador.message}</span>
+            {errors.nombrePersona && (
+              <span className="text-red-500">{errors.nombrePersona.message}</span>
             )}
           </div>
           {/* NUMERO CONTACTO */}
           <div>
-            <label htmlFor="numeroContacto" className="text-verde-militar font-bold font-oswald">
+            <label htmlFor="numeroPersona" className="text-verde-militar font-bold font-oswald">
               Contacto
             </label>
             <Input
-              id="numeroContacto"
+              id="numeroPersona"
               type="text"
               placeholder="Nro de contacto"
-              {...register("numeroContacto", {
+              {...register("numeroPersona", {
                 required: 'El número de contacto es obligatorio',
                 pattern: {
                   value: /^\d{10}$/,
@@ -246,8 +246,8 @@ const FormularioCarga = () => {
                 }
               })}
             />
-            {errors.numeroContacto && (
-              <span className="text-red-500">{errors.numeroContacto.message}</span>
+            {errors.numeroPersona && (
+              <span className="text-red-500">{errors.numeroPersona.message}</span>
             )}
           </div>
           {/* BTN ENVIO */}
