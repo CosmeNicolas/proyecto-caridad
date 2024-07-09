@@ -62,4 +62,4 @@ Si deseas contribuir a mejorar nuestra aplicación web, puedes seguir estos paso
 ## Autores 👷‍♂️
 - Cosme Nicolas Mas: [GitHub](https://github.com/CosmeNicolas) 
 - Adrián Chanampa: [GitHub](https://github.com/AdrianKarma) 
-- Lucas Capdevila: [GitHub](https://github.com/suarezagustina) 
+- Lucas Capdevila: [GitHub](https://github.com/lucasecapdevila)
