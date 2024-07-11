@@ -9,6 +9,7 @@ import Footer  from "./components/common/Footer"
 import DetalleDonacion from "./components/pages/DetalleDonacion"
 import { QuienSoy } from "./components/pages/QuienSoy";
 import LogoSoporte from "./components/common/LogoSoporte";
+import Administrador from "./components/pages/Administrador";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
     <Route exact path='/formulario' element={<FormularioCarga/>}/>
     <Route exact path='/detalleDonacion/:id' element={<DetalleDonacion/>}/>
     <Route exact path='/ComoReciclar' element={<QuienSoy/>}/>
+    <Route exact path='/Administrador' element={<Administrador/>}/>
     </Routes>
   </DonacionesProvider>
   </div>
