@@ -2,7 +2,7 @@ import React from 'react'
 import { BsTwitterX,BsFacebook, BsInstagram,  BsLinkedin, BsHeartFill} from "react-icons/bs";
 import { BsFillThreadsFill } from "react-icons/bs";
 import { Link } from 'react-router-dom';
-import { FaWhatsapp } from "react-icons/fa";
+/* import { FaWhatsapp } from "react-icons/fa"; */
 
 const Footer = () => {
   return (
@@ -31,7 +31,7 @@ const Footer = () => {
                 <BsFacebook className="text-[#1877F2] mx-1" />
               </li>
             </Link>
-            <Link to='https://www.instagram.com/cosme_nicolas/'>
+            <Link to='https://www.instagram.com/tucumanos2.0/'>
               <li>
                 <BsInstagram className="text-[#E1306C] mx-1" />
               </li>
@@ -44,12 +44,6 @@ const Footer = () => {
             <Link to='https://www.threads.net/@cosme_nicolas'>
               <li>
                 <BsFillThreadsFill className="text-[#000] mx-1" />
-              </li>
-            </Link>
-           
-            <Link to='https://www.threads.net/@cosme_nicolas'>
-              <li>
-                <FaWhatsapp  className="text-[#000] mx-1" />
               </li>
             </Link>
           </ul>

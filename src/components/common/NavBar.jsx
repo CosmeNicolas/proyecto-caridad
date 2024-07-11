@@ -53,7 +53,7 @@ const NavBar = () => {
               to="/ComoReciclar"
               className={`font-bold   ${location.pathname === '/ComoReciclar' ? ' rounded-md bg-[#D6CC99] p-2 text-[#001524]' : 'text-[#D6CC99]'}`}
             >
-              Como Reciclar
+             Cómo usar la app
             </Link>
           </NavbarItem>
         </NavbarContent>
@@ -76,7 +76,7 @@ const NavBar = () => {
               Formulario Donación
             </Button>
             <Button variant="bordered" as={Link} className="w-full flex justify-center font-bold bg-verde-militar border-black text-white my-1" to='/ComoReciclar'>
-            Como Reciclar
+            Cómo usar la app
             </Button>
           </NavbarMenuItem>
         </NavbarMenu>

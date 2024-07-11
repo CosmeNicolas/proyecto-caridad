@@ -37,7 +37,7 @@ const DetalleDonacion = () => {
             title: 'text-white',
             popup: 'bg-[#001524]',
             icon: 'text-green-300',
-            confirmButton: 'bg-[001524]',
+            confirmButton: 'bg-[#001524]',
           },
           confirmButtonColor: "#445D48",
         });
@@ -126,23 +126,36 @@ const DetalleDonacion = () => {
                     <p className="text-lg mt-1">{donacion.descripcion}</p>
                   </li>
                   <li className="mt-3">
+                    <p className="text-start font-bold font-oswald">Estado:
                     <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
                       {donacion.estado}
                     </span>
+                    </p>
+                  </li>
+                  <li className="mt-3">
+                  <p className="text-start font-bold font-oswald">categoría:
                     <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
                       {donacion.categoria}
                     </span>
+                    </p>
+                  </li>
+                  <li className="mt-3">
+                  <p className="text-start font-bold font-oswald">Ubicación:
+                    <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
+                      {donacion.localidades}
+                    </span>
+                    </p>
                   </li>
                 </ul>
               </div>
               {/* boton ELiminar */}
-           {/*    <Button
+              <Button
                 className="bg-[#710347] hover:bg-[#5b0439] text-white shadow-lg mt-4"
                 onClick={()=>handleEliminarDonacion(donacion._id)}
               >
                 Eliminar
                 <FaWhatsapp />
-              </Button> */}
+              </Button>
               <Button
                 as={Link}
                 to={`https://wa.me/${donacion.numeroPersona}?text=Hola%20${donacion.nombrePersona}%2C%20estoy%20interesado%20en%20la%20donación%20${donacion.nombreDonacion}`}
