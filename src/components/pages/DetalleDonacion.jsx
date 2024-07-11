@@ -149,13 +149,13 @@ const DetalleDonacion = () => {
                 </ul>
               </div>
               {/* boton ELiminar */}
-              <Button
+             {/*  <Button
                 className="bg-[#710347] hover:bg-[#5b0439] text-white shadow-lg mt-4"
                 onClick={()=>handleEliminarDonacion(donacion._id)}
               >
                 Eliminar
                 <FaWhatsapp />
-              </Button>
+              </Button> */}
               <Button
                 as={Link}
                 to={`https://wa.me/${donacion.numeroPersona}?text=Hola%20${donacion.nombrePersona}%2C%20estoy%20interesado%20en%20la%20donación%20${donacion.nombreDonacion}`}
