@@ -17,7 +17,7 @@ export const crearDonacionApi = async(nuevaDonacion) => {
           method: "POST",
           body: nuevaDonacion,
         });
-        console.log(respuesta);
+       /*  console.log(respuesta); */
         return respuesta;
     } catch (error) {
         console.log(error);
