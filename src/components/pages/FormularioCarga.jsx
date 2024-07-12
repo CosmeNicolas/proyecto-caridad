@@ -24,7 +24,7 @@ const FormularioCarga = () => {
 
   const crearDonacion = async (data) => {
     setIsLoading(true);
-    console.log("Formulario enviado con datos:", data);
+    /* console.log("Formulario enviado con datos:", data); */
 
     const formData = new FormData();
     formData.append("imagenDonacion", data.imagenDonacion[0]);

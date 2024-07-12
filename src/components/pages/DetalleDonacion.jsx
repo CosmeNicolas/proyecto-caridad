@@ -68,7 +68,6 @@ const DetalleDonacion = () => {
     if (respuesta.status === 200) {
       const donacion = await respuesta.json();
       setdonacion(donacion)
-      console.log(donacion)
     }
 
   };
