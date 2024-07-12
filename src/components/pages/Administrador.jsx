@@ -1,11 +1,13 @@
 import { useContext, useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import ContextDonaciones from "../../context/DonacionesContext";
-import { FaWhatsapp } from "react-icons/fa";
+import { eliminarDonacionApi } from "../../helpers/queries"; 
+import Swal from 'sweetalert2';
 
 function Administrador() {
   const { donaciones, donacionesApi } = useContext(ContextDonaciones);
   const [isLoading, setIsLoading] = useState(true);
+  const navigate = useNavigate(); 
 
   useEffect(() => {
     const fetchDonaciones = async () => {
@@ -19,6 +21,43 @@ function Administrador() {
     };
     fetchDonaciones();
   }, [donacionesApi]);
+
+  const handleDelete = async (id) => {
+    const result = await Swal.fire({
+      title: '¿Estás seguro?',
+      text: "Esta acción no se puede deshacer",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#d33',
+      cancelButtonColor: '#3085d6',
+      confirmButtonText: 'Sí, eliminar',
+      cancelButtonText: 'Cancelar'
+    });
+  
+    if (result.isConfirmed) {
+      try {
+        await eliminarDonacionApi(id);
+       
+        const nuevasDonaciones = await donacionesApi();
+        setDonaciones(nuevasDonaciones);
+        Swal.fire(
+          'Eliminada',
+          'La donación ha sido eliminada.',
+          'success'
+        );
+      } catch (error) {
+        console.error('Error eliminando donación:', error);
+        Swal.fire(
+          'Error',
+          'Hubo un problema al eliminar la donación. Inténtalo de nuevo más tarde.',
+          'error'
+        );
+      }
+    }
+  };
+  const handleEdit = (id) => {
+    navigate(`/editarDonacion/${id}`);
+  };
 
   return (
     <div className="container mx-auto px-4 py-2 imagen-back">
@@ -93,13 +132,19 @@ function Administrador() {
                       <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                         {donacion.numeroPersona}
                       </td>
-                      <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">
-                        <Link
-                          to={`/detalleDonacion/${donacion._id}`}
+                      <td className="px-6 py-4 whitespace-nowrap text-sm font-medium space-x-2">
+                        <button
+                          onClick={() => handleEdit(donacion._id)}
                           className="text-indigo-600 hover:text-indigo-900"
                         >
-                          Ver Detalle
-                        </Link>
+                          Editar
+                        </button>
+                        <button
+                          onClick={() => handleDelete(donacion._id)}
+                          className="text-red-600 hover:text-red-900"
+                        >
+                          Eliminar
+                        </button>
                       </td>
                     </tr>
                   ))
