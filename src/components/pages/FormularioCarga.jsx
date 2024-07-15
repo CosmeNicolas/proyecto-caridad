@@ -9,7 +9,7 @@ import ContextDonaciones from "../../context/DonacionesContext";
 
 
 
-const FormularioCarga = () => {
+const FormularioCarga = ({editar, titulo}) => {
   const direccionar = useNavigate()
   const {setDonaciones} = useContext(ContextDonaciones)
    const [isLoading, setIsLoading] = useState(false);
@@ -78,7 +78,7 @@ const FormularioCarga = () => {
       <div className="mx-auto max-w-md backdrop-filter backdrop-blur-md bg-opacity-70 rounded-2xl  p-5 bg-[#00000034] ">
         <div className="font-mono bg-azul-oscuro rounded-xl py-2">
           <h1 className="text-center text-2xl font-bold text-white font-oswald ">
-            INGRESAR DONACIÓN
+            {titulo}
           </h1>
           <p className="text-center text-gray-300">#ReciclaDesdeCasa</p>
         </div>

@@ -56,7 +56,7 @@ function Administrador() {
     }
   };
   const handleEdit = (id) => {
-    navigate(`/editarDonacion/${id}`);
+    navigate(`/Administrador/editarDonacion/${id}`);
   };
 
   return (

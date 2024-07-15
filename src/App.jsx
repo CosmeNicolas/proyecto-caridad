@@ -22,10 +22,11 @@ function App() {
     <Routes>
     <Route exact path="/" element={<Inicio />} />
     <Route exact path='/donaciones' element={<CardRecursos/>}/>
-    <Route exact path='/formulario' element={<FormularioCarga/>}/>
+    <Route exact path='/formulario' element={<FormularioCarga editar={false} titulo={'INGRESAR DONACIÓN'}/>}/>
     <Route exact path='/detalleDonacion/:id' element={<DetalleDonacion/>}/>
     <Route exact path='/ComoReciclar' element={<QuienSoy/>}/>
     <Route exact path='/Administrador' element={<Administrador/>}/>
+    <Route exact path='/Administrador/editarDonacion/:id' element={<FormularioCarga editar={true} titulo={'EDITAR DONACIÓN'}/>}/>
     </Routes>
   </DonacionesProvider>
   </div>
