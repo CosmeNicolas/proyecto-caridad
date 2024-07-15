@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState} from "react";
 import { useForm } from "react-hook-form";
 import { Input } from "@nextui-org/input";
 import { Button } from "@nextui-org/react";
-import { crearDonacionApi , obtenerDonacionId} from "../../helpers/queries";
+import { crearDonacionApi , editarDonacionApi, obtenerDonacionId} from "../../helpers/queries";
 import { useNavigate, useParams } from "react-router-dom";
 import Swal from 'sweetalert2'
 import ContextDonaciones from "../../context/DonacionesContext";
@@ -26,16 +26,16 @@ const {id}= useParams();
 
 useEffect(()=>{
   if(editar){
-  cargarDatosFormulario()
+  cargarDatosFormulario();
 }
-},[])
+}, []);
 
 const cargarDatosFormulario =async ()=>{
-  console.log(id);
+  
 const respuesta = await obtenerDonacionId(id);
 if (respuesta.status === 200){
   const donacionBuscada = await respuesta.json();
-  console.log(donacionBuscada)
+  
 setValue('imagenDonacion', donacionBuscada.imagenDonacion)
 setValue('nombreDonacion', donacionBuscada.nombreDonacion)
 setValue('descripcion', donacionBuscada.descripcion)
@@ -61,25 +61,43 @@ else{
 }
 
   const crearDonacion = async (data) => {
-    setIsLoading(true);
-    console.log("Formulario enviado con datos:", data);
-
-    const formData = new FormData();
-    formData.append("imagenDonacion", data.imagenDonacion[0]);
-    formData.append("nombreDonacion", data.nombreDonacion);
-    formData.append("descripcion", data.descripcion);
-    formData.append("estado", data.estado);
-    formData.append("categoria", data.categoria);
-    formData.append("localidades", data.localidades)
-    formData.append("nombrePersona", data.nombrePersona);
-    formData.append("numeroPersona", data.numeroPersona);
-
+    
     try {
 
       if (editar){
+     const respuesta = await  editarDonacionApi(id , data);
+     if (respuesta.status === 200) {
+      Swal.fire({
+        title: "Producto editado",
+        text: `La donacion fue editado correctamente`,
+        icon: "success",
+      });
+      //redireccionar
+      direccionar("/administrador");
+    } else {
+      Swal.fire({
+        title: "Ocurrio un error",
+        text: "Intente modificar esta donacion en unos minutos",
+        icon: "error",
+      });
+    }
 
       }
       else{
+        setIsLoading(true);
+        console.log("Formulario enviado con datos:", data);
+    
+        const formData = new FormData();
+        formData.append("imagenDonacion", data.imagenDonacion[0]);
+        formData.append("nombreDonacion", data.nombreDonacion);
+        formData.append("descripcion", data.descripcion);
+        formData.append("estado", data.estado);
+        formData.append("categoria", data.categoria);
+        formData.append("localidades", data.localidades)
+        formData.append("nombrePersona", data.nombrePersona);
+        formData.append("numeroPersona", data.numeroPersona);
+    
+
       const respuesta = await crearDonacionApi(formData);
       if (respuesta.status === 201) {
         Swal.fire({

@@ -28,7 +28,7 @@ export const crearDonacionApi = async(nuevaDonacion) => {
 export const obtenerDonacionId = async (id) => {
     try {
       const respuesta = await fetch(`${URI_DONACIONES}/${id}`);
-      console.log(respuesta)
+     
       return respuesta;
     } catch (error) {
       console.error(error);
@@ -51,3 +51,20 @@ export const eliminarDonacionApi = async (id) => {
     console.error(error);
   }
 };
+
+//Editar Donacion
+export const editarDonacionApi = async(id, data) => {
+  try {
+      const respuesta = await fetch(`${URI_DONACIONES}/${id}`, {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: data,
+      });
+      console.log(respuesta);
+      return respuesta;
+  } catch (error) {
+      console.log(error);
+  }
+}
