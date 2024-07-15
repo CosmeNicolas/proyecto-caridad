@@ -37,6 +37,11 @@ const FormularioCarga = ({editar, titulo}) => {
     formData.append("numeroPersona", data.numeroPersona);
 
     try {
+
+      if (editar){
+
+      }
+      else{
       const respuesta = await crearDonacionApi(formData);
       if (respuesta.status === 201) {
         Swal.fire({
@@ -53,7 +58,7 @@ const FormularioCarga = ({editar, titulo}) => {
         reset();
         setDonaciones(formData)
         direccionar('/donaciones')
-      }
+      }}
     } catch (error) {
       console.log(error)
       Swal.fire({
