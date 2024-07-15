@@ -19,6 +19,7 @@ const FormularioCarga = ({editar, titulo}) => {
     handleSubmit,
     formState: { errors },
     reset,
+    setValue
   } = useForm();
 const {id}= useParams();
 
@@ -35,7 +36,14 @@ const respuesta = await obtenerDonacionId(id);
 if (respuesta.status === 200){
   const donacionBuscada = await respuesta.json();
   console.log(donacionBuscada)
-
+setValue('imagenDonacion', donacionBuscada.imagenDonacion)
+setValue('nombreDonacion', donacionBuscada.nombreDonacion)
+setValue('descripcion', donacionBuscada.descripcion)
+setValue('estado', donacionBuscada.estado)
+setValue('categoria', donacionBuscada.categoria)
+setValue('localidades', donacionBuscada.localidades)
+setValue('nombrePersona', donacionBuscada.nombrePersona)
+setValue('numeroPersona', donacionBuscada.numeroPersona)
 }
 else{
   Swal.fire({
