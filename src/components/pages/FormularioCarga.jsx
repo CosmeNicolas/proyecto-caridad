@@ -1,9 +1,9 @@
-import React, { useContext, useState} from "react";
+import React, { useContext, useEffect, useState} from "react";
 import { useForm } from "react-hook-form";
 import { Input } from "@nextui-org/input";
 import { Button } from "@nextui-org/react";
-import { crearDonacionApi } from "../../helpers/queries";
-import { useNavigate } from "react-router-dom";
+import { crearDonacionApi , obtenerDonacionId} from "../../helpers/queries";
+import { useNavigate, useParams } from "react-router-dom";
 import Swal from 'sweetalert2'
 import ContextDonaciones from "../../context/DonacionesContext";
 
@@ -20,7 +20,37 @@ const FormularioCarga = ({editar, titulo}) => {
     formState: { errors },
     reset,
   } = useForm();
+const {id}= useParams();
 
+
+useEffect(()=>{
+  if(editar){
+  cargarDatosFormulario()
+}
+},[])
+
+const cargarDatosFormulario =async ()=>{
+  console.log(id);
+const respuesta = await obtenerDonacionId(id);
+if (respuesta.status === 200){
+  const donacionBuscada = await respuesta.json();
+  console.log(donacionBuscada)
+
+}
+else{
+  Swal.fire({
+    title: "Error",
+    text: "Error al cargar la donacion",
+    icon: "error",
+    customClass: {
+      title: 'text-white',
+      popup: 'bg-[#001524]',
+      icon: 'text-green-300',
+      confirmButton: 'bg-green-500 hover:bg-green-600',
+    }
+  });
+}
+}
 
   const crearDonacion = async (data) => {
     setIsLoading(true);
