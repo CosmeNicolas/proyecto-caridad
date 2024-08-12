@@ -1,6 +1,5 @@
 import { Card, CardHeader, CardBody, Image, Button,Divider } from "@nextui-org/react";
 import { useContext, useEffect } from "react";
-import { FaWhatsapp } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import ContextDonaciones from "../../context/DonacionesContext";
 import tacho from '../../assets/img/supertacho.png'
@@ -68,7 +67,7 @@ const CardRecursos = () => {
               className="bg-[#001524] hover:bg-[#001524] text-white shadow-lg mt-4"
             >
               Ver Detalle
-              <FaWhatsapp />
+        
             </Button>
         
           </CardBody>
