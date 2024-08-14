@@ -12,14 +12,13 @@ const NavBar = () => {
       <Navbar className="text-dark bg-[#35443770]  font-oswald" onMenuOpenChange={setIsMenuOpen}>
         <NavbarContent>
           <NavbarBrand>
-           
             <Link to='/'>
               <img className="w-[50px]" src={logo} alt="logo" />
             </Link>
           </NavbarBrand>
           <NavbarMenuToggle
-            aria-label={isMenuOpen ? "Close menu" : "Open menu"}
-            className="sm:hidden  menu-toggle"
+           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+           className="sm:hidden border-2 border-white menu-toggle w-10 h-10"
           />
         </NavbarContent>
 
