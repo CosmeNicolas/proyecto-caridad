@@ -22,8 +22,8 @@ const CardRecursos = () => {
         key={donacion._id}
         className="w-full sm:w-1/2 lg:w-1/4 max-w-xs md:max-w-md my-1 py-2"
       >
-        <Card className="h-full flex flex-col">
-          <CardHeader className="overflow-hidden py-2">
+        <Card className="h-full flex flex-col bg-blanco">
+          <CardHeader className="overflow-hidden py-2 ">
             <div className="h-[320px] relative">
               <Image
                 alt="Card background"
@@ -64,7 +64,7 @@ const CardRecursos = () => {
           <Button
               as={Link}
               to={`/detalleDonacion/${donacion._id}`}
-              className="bg-[#001524] hover:bg-[#001524] text-white shadow-lg mt-4"
+              className="bg-amarillo hover:bg-marron text-negro-mate font-semibold shadow-lg mt-4 font-roboto"
             >
               Ver Detalle
         
