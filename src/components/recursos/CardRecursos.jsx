@@ -39,17 +39,17 @@ const CardRecursos = () => {
                   </p>
                 </div>
 
-                <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
+                <span className="inline-block bg-gray-200 rounded-full   text-sm font-semibold text-gray-700 mr-2 mb-2 text-center">
                   {/* {donacion.estado} */}
-                  nuevo
+                 casi  nuevo
                 </span>
-                <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
+                <span className="inline-block bg-gray-200 rounded-full   text-sm font-semibold text-gray-700 mr-2 mb-2 text-center">
                   {/* {donacion.categoria} */}
                   para bebes
                 </span>
-                <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
+                <span className="inline-block bg-gray-200 rounded-full   text-sm font-semibold text-gray-700 mr-2 mb-2 text-center">
                   {/* {donacion.localidades} */}
-                  sm TucuManos🤝
+                  San Miguel de Tucumán
                 </span>
                 <Divider />
                 <Button
