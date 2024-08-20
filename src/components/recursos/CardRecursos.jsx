@@ -1,12 +1,16 @@
 import { Card, CardBody, Image, Divider, Button, CardHeader } from "@nextui-org/react";
 import { Link } from "react-router-dom";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import ContextDonaciones from "../../context/DonacionesContext"; 
 import logo from "../../assets/img/logo-provisorio.png";
 import tacho from "../../assets/img/supertacho.png";
 
 const CardRecursos = () => {
-  const { donaciones } = useContext(ContextDonaciones);
+  const { donaciones, donacionesApi } = useContext(ContextDonaciones);
+  useEffect(() => {
+    donacionesApi()
+  }, [])
+  
 
   return (
     <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6 p-4 imagen-back">
