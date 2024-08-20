@@ -36,6 +36,9 @@ const FormularioCarga = () => {
     formData.append("nombrePersona", data.nombrePersona);
     formData.append("numeroPersona", data.numeroPersona);
 
+    /* guardamos el numero de telefono tambien en el local storage  */
+    localStorage.setItem('numeroPersona', data.numeroPersona)
+    
     try {
       const respuesta = await crearDonacionApi(formData);
       if (respuesta.status === 201) {
