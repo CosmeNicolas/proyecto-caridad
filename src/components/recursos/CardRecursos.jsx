@@ -1,22 +1,77 @@
-import { Card, CardHeader, CardBody, Image, Button,Divider } from "@nextui-org/react";
-import { useContext, useEffect } from "react";
+import { Card, CardBody, Image, Divider, Button } from "@nextui-org/react";
 import { Link } from "react-router-dom";
-import ContextDonaciones from "../../context/DonacionesContext";
-import tacho from '../../assets/img/supertacho.png'
-
 
 const CardRecursos = () => {
-  const {donaciones, donacionesApi} = useContext(ContextDonaciones)
-
-  useEffect(() => {
-    donacionesApi()
-  }, [])
-  
-
   return (
     <>
-<section className="flex flex-wrap justify-center gap-3 imagen-back">
-  {donaciones && donaciones.length > 0 ? (
+      <section className="flex flex-wrap justify-center gap-3 imagen-back">
+        <Card className="bg-blanco">
+          <CardBody className="overflow-visible ">
+            <div className="flex bg-[#efecdd]  rounded-lg">
+              <div>
+                <Image
+                  alt="Card background"
+                  className="object-cover rounded-xl"
+                  src="https://nextui.org/images/hero-card-complete.jpeg"
+                  width={270}
+                />
+              </div>
+
+              {/* Divider vertical */}
+              <Divider
+                className="mx-4 bg-[#00000028] w-[3px] rounded-lg"
+                orientation="vertical"
+                height="auto"
+              />
+              {/* contenedor datos donacion  */}
+              <div className=" bg-white rounded-lg flex flex-col p-5">
+                <div className="text-xs   ">
+                  <strong>Nombre Contacto:</strong>
+                  <p className="text-gray-700 ">
+                    {/* {donacion.nombrePersona} */}
+                    Nicolas
+                  </p>
+                </div>
+                <div className="text-xs ">
+                  <span className="font-bold">Descripcion:</span>
+                  <p className="text-gray-700 ">
+                    {/*  {donacion.descripcion} */}
+                  </p>
+                </div>
+
+                <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
+                  {/* {donacion.estado} */}
+                  nuevo
+                </span>
+                <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
+                  {/* {donacion.categoria} */}
+                  para bebes
+                </span>
+                <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
+                  {/* {donacion.localidades} */}
+                  sm TucuManos🤝
+                </span>
+                <Divider />
+                <Button
+                  as={Link}
+                  /*   to={`/detalleDonacion/${donacion._id}`} */
+                  className="bg-amarillo hover:bg-marron text-negro-mate font-semibold shadow-lg mt-4 font-roboto w-full"
+                >
+                  Ver Detalle
+                </Button>
+              </div>
+            </div>
+          </CardBody>
+        </Card>
+      </section>
+    </>
+  );
+};
+
+export default CardRecursos;
+
+{
+  /*   {donaciones && donaciones.length > 0 ? (
     donaciones.map((donacion) => (
       <div
         key={donacion._id}
@@ -26,6 +81,7 @@ const CardRecursos = () => {
           <CardHeader className="overflow-hidden py-2 ">
             <div className="h-[320px] relative">
               <Image
+              width={300}
                 alt="Card background"
                 className="rounded-xl"
                 src={donacion.imagenDonacion}
@@ -104,10 +160,5 @@ const CardRecursos = () => {
       </div>
       <Divider />
     </Card>
-  )}
-</section>
-    </>
-  );
-};
-
-export default CardRecursos;
+  )} */
+}
