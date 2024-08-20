@@ -50,7 +50,7 @@ const CardRecursos = () => {
                       <strong>Nombre Contacto:</strong>
                       <br />
                       <p className="inline-block bg-gray-200 rounded-full text-sm font-semibold text-gray-700 p-1">
-                        {donacion.nombrePersona}
+                        {donacion.nombrePersona}🌱
                       </p>
                     </div>
                     <div className="text-xs">
@@ -58,17 +58,18 @@ const CardRecursos = () => {
                       <p className="text-gray-700 font-semibold">
                         {donacion.descripcion}
                       </p>
+                      <Divider className="my-1"/>
                     </div>
-                    <div>
-                      <span className="inline-block bg-gray-200 rounded-full text-sm font-semibold text-gray-700 p-1">
+                    <div className="p-1">
+                      <span className="inline-block bg-gray-200 rounded-full text-sm font-semibold text-gray-700 mx-1 px-1 ">
                         {donacion.estado}
                       </span>
-                      <span className="inline-block bg-gray-200 rounded-full text-sm font-semibold text-gray-700 p-1">
+                      <span className="inline-block bg-gray-200 rounded-full text-sm font-semibold text-gray-700 mx-1 px-1">
                         {donacion.categoria}
                       </span>
                     </div>
-                    <div>
-                      <span className="inline-block bg-gray-200 rounded-full text-sm font-semibold text-gray-700 mr-2 mb-2 text-center">
+                    <div className="p-1">
+                      <span className="inline-block bg-gray-200 rounded-full text-sm font-semibold text-gray-700   text-center mx-1 px-1">
                         {donacion.localidades}
                       </span>
                     </div>
