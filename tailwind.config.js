@@ -16,7 +16,8 @@ export default {
         "amarillo": "#FFD44A",
         "negro-mate": "##1E1E1E",
         "marron": "##BF9D73",
-        "blanco": "#EFECDD"
+        "blanco": "#EFECDD",
+        "verde-oscuro":"#244f27"
       },
       fontFamily: {
         oswald: ['Oswald', 'sans-serif'],
