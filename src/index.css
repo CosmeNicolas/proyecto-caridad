@@ -16,59 +16,56 @@
 #395034
 */
 
-.menu-toggle span{
-    color: #ffffff ;
+.menu-toggle span {
+  color: #ffffff;
 }
 
-
-
-option{
-    background:#001524;
-    color: #FDE5D4;
+option {
+  background: #001524;
+  color: #FDE5D4;
 }
 
 select focus option:checked {
-    background-color: #D6CC99; /* Color de fondo para la opción seleccionada cuando el select está enfocado */
-    color: white; /* Color de texto para la opción seleccionada cuando el select está enfocado */
+  background-color: #D6CC99;
+  /* Color de fondo para la opción seleccionada cuando el select está enfocado */
+  color: white;
+  /* Color de texto para la opción seleccionada cuando el select está enfocado */
 }
 
+.imagen-back {
+  background-image: url(./assets/img/centro-logo.png);
+  background-repeat: no-repeat;
+  background-size: cover;
 
-.imagen-back{
-    background-image: url(./assets/img/centro-logo.png);
-    background-repeat: no-repeat;
-    background-size: cover;
-    .ubuntu-medium-italic {
-        font-family: "Ubuntu", sans-serif;
-        font-weight: 500;
-        font-style: italic;
-      }
-      
+  .ubuntu-medium-italic {
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 500;
+    font-style: italic;
+  }
 }
 
-@media screen and (max-width: 767px){
-   
-.imagen-back{
+@media screen and (max-width: 767px) {
+  .imagen-back {
     background-image: url(./assets/img/logo.png);
-     background-position: center;
-     background-repeat:no-repeat;
-     width: 100%;
-     background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    background-size: cover;
+  }
 }
-  }
 
-  @media all and (min-width: 768px) and (max-width: 991px){
-      
-.imagen-back{
-     background-image: url(./assets/img/logo.png);
-     background-position: center;
-     background-repeat:no-repeat;
+@media all and (min-width: 768px) and (max-width: 991px) {
+  .imagen-back {
+    background-image: url(./assets/img/logo.png);
+    background-position: center;
+    background-repeat: no-repeat;
+  }
 }
-  }
 
-  @media (min-width: 1024px){
-    .imagen-back{
-        background-image: url(./assets/img/logo.png);
-        background-position: center;
-        background-repeat:no-repeat;
-   }
+@media (min-width: 1024px) {
+  .imagen-back {
+    background-image: url(./assets/img/logo.png);
+    background-position: center;
+    background-repeat: no-repeat;
   }
+}
