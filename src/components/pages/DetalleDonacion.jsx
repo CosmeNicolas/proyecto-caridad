@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
-import { Card, CardBody, Image, CardHeader, Button } from "@nextui-org/react";
+import { Card, CardBody, Image, CardHeader, Button, Divider } from "@nextui-org/react";
 import { FaWhatsapp } from "react-icons/fa";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { eliminarDonacionApi, obtenerDonacionId } from "../../helpers/queries";
 import logo from "../../assets/img/logo-provisorio.png";
 import Swal from "sweetalert2";
 import { MdDeleteForever } from "react-icons/md";
+import reduce from '../../assets/img/ReduceReusa.png'
 
 const DetalleDonacion = () => {
   const { id } = useParams();
@@ -95,7 +96,7 @@ const DetalleDonacion = () => {
             <p className="text-small font-mono">Detalle Donación</p>
           </div>
         </CardHeader>
-        <CardBody className="flex lg:flex-row">
+        <CardBody className="flex lg:flex-row bg-blanco">
           <Image
             alt="Album cover"
             className="object-cover border-2 border-azul-oscuro"
@@ -108,6 +109,11 @@ const DetalleDonacion = () => {
             <h1 className="font-oswald font-bold text-xl">
               {donacion?.nombreDonacion}
             </h1>
+            <div className="flex justify-center">
+              <p>Categoria {/* <Divider orientation="vertical"/> */}
+              {donacion?.categoria}
+              </p>
+            </div>
             <hr className="mx-10 rounded-md border border-solid border-verde-militar" />
             <div className="mt-3">
               <ul>
@@ -149,7 +155,9 @@ const DetalleDonacion = () => {
             </div>
             {!loading && ( // Solo mostrar el botón una vez que se complete la carga
               <Button
-                className={`bg-[#710347] hover:bg-[#5b0439] text-white shadow-lg mt-4 ${!puedeEliminar ? "opacity-50 cursor-not-allowed" : ""}`}
+                className={`bg-[#710347] hover:bg-[#5b0439] text-white shadow-lg mt-4 text-md ${
+                  !puedeEliminar ? "opacity-50 cursor-not-allowed" : ""
+                }`}
                 onClick={() => handleEliminarDonacion(donacion._id)}
                 isDisabled={!puedeEliminar} // Condición de deshabilitado
               >
@@ -160,7 +168,7 @@ const DetalleDonacion = () => {
             <Button
               as={Link}
               to={`https://wa.me/${donacion?.numeroPersona}?text=Hola%20${donacion?.nombrePersona}%2C%20estoy%20interesado%20en%20la%20donación%20${donacion?.nombreDonacion}`}
-              className="bg-green-600 hover:bg-green-600 text-white shadow-lg mt-4"
+              className="bg-green-600 hover:bg-green-600 text-white shadow-lg mt-4 text-md"
               target="_blank"
               rel="noopener noreferrer"
               size="lg"
@@ -168,6 +176,15 @@ const DetalleDonacion = () => {
               Contactar
               <FaWhatsapp />
             </Button>
+          </div>
+          <div className="flex flex-col justify-center items-center mt-3 py-3 ">
+            <Image
+              alt="Album cover"
+              className="object-cover rounded-none  "
+              height={200}
+              src={reduce}
+            />
+            <p className="font-roboto text-[#513c0a] font-semibold">#ReciclaDesdeCasa</p>
           </div>
         </CardBody>
       </Card>

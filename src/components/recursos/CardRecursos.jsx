@@ -3,20 +3,22 @@ import { Link } from "react-router-dom";
 import { useContext, useEffect } from "react";
 import ContextDonaciones from "../../context/DonacionesContext"; 
 import logo from "../../assets/img/logo-provisorio.png";
+import tacho from "../../assets/img/supertacho.png"; // Asegúrate de que la imagen tacho esté en esta ruta
 
 const CardRecursos = () => {
   const { donaciones, donacionesApi } = useContext(ContextDonaciones);
+
   useEffect(() => {
-    donacionesApi()
-  }, [])
-  
+    donacionesApi();
+  }, []);
+
 
   return (
     <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6 p-4 imagen-back">
       {donaciones && donaciones.length > 0 ? (
         donaciones.map((donacion) => (
-          <Card className="bg-blanco" key={donacion._id}>
-            <CardHeader className="flex gap-3 justify-center  bg-azul-oscuro/85 backdrop-blur-3xlxl rounded-sm bg-azul-oscuro">
+          <Card className="bg-[#efecdd] rounded-[10px]" key={donacion._id}>
+            <CardHeader className="flex gap-3 justify-center  bg-azul-oscuro/85 backdrop-blur-xl rounded-sm bg-azul-oscuro">
               <Image
                 alt="nextui logo"
                 height={40}
@@ -25,26 +27,25 @@ const CardRecursos = () => {
                 width={40}
               />
               <div className="flex flex-col text-white">
-                <p className="text-md font-mono font-bold mx-3 ">Tucu🤝Manos</p>
+                <p className="text-md font-mono font-bold mx-3">Tucu🤝Manos</p>
               </div>
             </CardHeader>
             <CardBody className="overflow-visible">
-              <div className="flex bg-[#efecdd] rounded-lg">
+              <div className="flex rounded-lg justify-center items-center">
                 <Image
                   alt="Card background"
-                  className="object-fill rounded-xl w-[350px] h-[380px]"
+                  className="object-fill rounded-[10px] w-[200px] h-[310px]"
                   src={donacion.imagenDonacion}
-                  width={270}
+                  width={187}
+                  height={310}
                 />
-
                 <Divider
                   className="mx-4 bg-[#00000028] w-[3px] rounded-lg"
                   orientation="vertical"
                   height="auto"
                 />
-
-                <div className="bg-white rounded-lg flex flex-col p-5 justify-center">
-                  <p className="text-xl font-bold font-roboto">
+                <div className="bg-white rounded-[10px] flex flex-col p-5 justify-center">
+                  <p className="text-base font-medium font-['Roboto Condensed'] text-black">
                     {donacion.nombreDonacion}
                   </p>
                   <Divider className="mt-1" />
@@ -58,21 +59,21 @@ const CardRecursos = () => {
                     </div>
                     <div className="text-xs">
                       <strong className="font-bold">Descripción:</strong>
-                      <p className="text-gray-700 font-semibold">
+                      <p className="text-gray-700 font-roboto font-semibold my-1">
                         {donacion.descripcion}
                       </p>
                       <Divider className="my-1" />
                     </div>
-                    <div className="p-1">
-                      <span className="inline-block bg-gray-200 rounded-full text-sm font-semibold text-gray-700 mx-1 px-1 ">
+                    <div>
+                      <span className="inline-block bg-gray-200 rounded-full text-xs font-semibold text-gray-700 px-1">
                         {donacion.estado}
                       </span>
-                      <span className="inline-block bg-gray-200 rounded-full text-sm font-semibold text-gray-700 mx-1 px-1">
+                      <span className="inline-block bg-gray-200 rounded-full text-xs font-semibold text-gray-700 px-1">
                         {donacion.categoria}
                       </span>
                     </div>
-                    <div className="p-1">
-                      <span className="inline-block bg-gray-200 rounded-full text-sm font-semibold text-gray-700   text-center mx-1 px-1">
+                    <div>
+                      <span className="inline-block bg-gray-200 rounded-full text-xs font-semibold text-gray-700 text-center">
                         {donacion.localidades}
                       </span>
                     </div>
@@ -80,7 +81,7 @@ const CardRecursos = () => {
                     <Button
                       as={Link}
                       to={`/detalleDonacion/${donacion._id}`}
-                      className="bg-amarillo hover:bg-marron text-negro-mate font-semibold shadow-lg mt-4 font-roboto w-full"
+                      className="w-[117px] h-[22px] bg-[#ffd349] rounded-[40px] text-sm font-medium font-['Roboto Condensed'] text-black mt-4 mx-auto flex justify-center items-center"
                     >
                       Ver Detalle
                     </Button>
@@ -92,45 +93,42 @@ const CardRecursos = () => {
         ))
       ) : (
         <div className="flex items-center justify-center min-h-screen flex-col">
-  <img className="mr-5 animate-pulse" src={logo} alt="Card-image" />
-    <div className="cargando font-bold font-mono text-verde-oscuro">Cargando...</div>
-</div>
-        /*  <Card
-        isFooterBlurred
-        radius="lg"
-        className="border-none backdrop-filter backdrop-blur-md bg-opacity-70 rounded-2xl p-5 bg-[#8b89892a] my-3 mx-1"
-      >
-        <CardBody className="text-center text-azul-oscuro font-bold bg-verde-tierra rounded-xl">
-          <p>"El medio ambiente está limpio."</p>
-          <p> "Sin donaciones disponibles en este momento."</p>
-        </CardBody>
-        <div className="flex justify-center items-center flex-col">
-          <Image
-            alt="tacho de basura"
-            className="object-cover"
-            src={tacho}
-            height={300}
-            width={300}
-          />
-          <Button
-            as={Link}
-            to="/"
-            className="text-white bg-verde-militar font-bold font-oswald hover:text-azul-oscuro"
-            variant="ghost"
-            size="md"
-          >
-            Volver al Inicio
-          </Button>
+          <img className="mr-5 animate-pulse" src={logo} alt="Card-image" />
+          <div className="cargando font-bold font-mono text-verde-oscuro">Cargando...</div>
         </div>
-        <Divider />
-      </Card> */
+      )}
+      {!donaciones.length && (
+        <Card
+          radius="lg"
+          className="border-none backdrop-filter backdrop-blur-md bg-opacity-70 rounded-2xl p-5 bg-[#8b89892a] my-3 mx-1"
+        >
+          <CardBody className="text-center text-azul-oscuro font-bold bg-verde-tierra rounded-xl">
+            <p>"El medio ambiente está limpio."</p>
+            <p>"Sin donaciones disponibles en este momento."</p>
+          </CardBody>
+          <div className="flex justify-center items-center flex-col">
+            <Image
+              alt="tacho de basura"
+              className="object-cover"
+              src={tacho}
+              height={300}
+              width={300}
+            />
+            <Button
+              as={Link}
+              to="/"
+              className="text-white bg-verde-militar font-bold font-oswald hover:text-azul-oscuro"
+              variant="ghost"
+              size="md"
+            >
+              Volver al Inicio
+            </Button>
+          </div>
+          <Divider />
+        </Card>
       )}
     </section>
   );
 };
 
 export default CardRecursos;
-
-
-
-

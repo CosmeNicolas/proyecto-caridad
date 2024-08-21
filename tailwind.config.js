@@ -15,7 +15,7 @@ export default {
         "marron-claro": "#FDE5D4",
         "amarillo": "#FFD44A",
         "negro-mate": "##1E1E1E",
-        "marron": "##BF9D73",
+        "marron": "#BF9D73",
         "blanco": "#EFECDD",
         "verde-oscuro":"#244f27"
       },
