@@ -1,24 +1,33 @@
 import { Card, CardBody, Image, Divider, Button, CardHeader } from "@nextui-org/react";
 import { Link } from "react-router-dom";
-import { useContext, useEffect } from "react";
+import { useContext, useEffect, useState } from "react";
 import ContextDonaciones from "../../context/DonacionesContext"; 
 import logo from "../../assets/img/logo-provisorio.png";
-import tacho from "../../assets/img/supertacho.png"; // Asegúrate de que la imagen tacho esté en esta ruta
+import tacho from "../../assets/img/supertacho.png";
 
 const CardRecursos = () => {
   const { donaciones, donacionesApi } = useContext(ContextDonaciones);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    donacionesApi();
-  }, []);
-
+    const fetchData = async () => {
+      await donacionesApi();
+      setLoading(false);
+    };
+    fetchData();
+  }, [donacionesApi]);
 
   return (
-    <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6 p-4 imagen-back">
-      {donaciones && donaciones.length > 0 ? (
+    <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6  p-4 imagen-back">
+      {loading ? (
+        <div className="text-center flex flex-col items-center justify-center h-screen">
+          <img className="animate-pulse mx-auto" src={logo} alt="Card-image" />
+          <p className="cargando font-bold font-mono text-verde-oscuro">Cargando...</p>
+        </div>
+      ) : donaciones.length  ? (
         donaciones.map((donacion) => (
           <Card className="bg-[#efecdd] rounded-[10px]" key={donacion._id}>
-            <CardHeader className="flex gap-3 justify-center  bg-azul-oscuro/85 backdrop-blur-xl rounded-sm bg-azul-oscuro">
+            <CardHeader className="flex gap-3 justify-center bg-azul-oscuro/85 backdrop-blur-xl rounded-sm bg-azul-oscuro">
               <Image
                 alt="nextui logo"
                 height={40}
@@ -92,12 +101,6 @@ const CardRecursos = () => {
           </Card>
         ))
       ) : (
-        <div className="flex items-center justify-center min-h-screen flex-col">
-          <img className="mr-5 animate-pulse" src={logo} alt="Card-image" />
-          <div className="cargando font-bold font-mono text-verde-oscuro">Cargando...</div>
-        </div>
-      )}
-      {!donaciones.length && (
         <Card
           radius="lg"
           className="border-none backdrop-filter backdrop-blur-md bg-opacity-70 rounded-2xl p-5 bg-[#8b89892a] my-3 mx-1"
