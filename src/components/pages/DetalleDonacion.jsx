@@ -93,7 +93,7 @@ const DetalleDonacion = () => {
           />
           <div className="flex flex-col text-white">
             <p className="text-md font-oswald font-bold mx-3">TucuManos🤝</p>
-            <p className="text-small font-mono">Detalle Donación</p>
+            <p className="text-small font-mono">Detalle reciclado</p>
           </div>
         </CardHeader>
         <CardBody className="flex lg:flex-row bg-blanco">

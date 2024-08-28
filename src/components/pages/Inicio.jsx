@@ -18,7 +18,7 @@ import { TbHeartHandshake } from "react-icons/tb";
           </h2> */}
         
           <Link to="/formulario" className="bg-[#245027] hover:bg-[#D6CC99] hover:text-azul-oscuro text-white font-bold py-3 px-10 rounded-full  text-2xl font-oswald flex flex-col items-center justify-center">
-               <p>Agregar Donación</p>
+               <p>Agregar Reciclado</p>
                <AiFillPlusCircle className="font-extrabold text-3xl mr-2  " />
            </Link>
      </section>

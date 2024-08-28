@@ -36,7 +36,7 @@ const NavBar = () => {
               to="/donaciones"
               className={` font-bold   ${location.pathname === '/donaciones' ? ' rounded-md bg-[#D6CC99] p-2 text-[#001524]' : ' text-[#D6CC99]'}`}
             >
-              Donaciones
+              Reciclados
             </Link>
           </NavbarItem>
           <NavbarItem isActive={location.pathname === '/formulario'}>
@@ -44,7 +44,7 @@ const NavBar = () => {
               to="/formulario"
               className={`font-bold   ${location.pathname === '/formulario' ? ' rounded-md bg-[#D6CC99] p-2 text-[#001524]' : 'text-[#D6CC99]'}`}
             >
-              Formulario Donación
+              Formulario Reciclado
             </Link>
           </NavbarItem>
           <NavbarItem isActive={location.pathname === '/formulario'}>
@@ -69,10 +69,10 @@ const NavBar = () => {
               Inicio
             </Button>
             <Button variant="bordered" as={Link} className="w-full flex justify-center font-bold bg-verde-militar border-black text-white my-1" to='/donaciones'>
-              Donaciones
+              Reciclado
             </Button>
             <Button variant="bordered" as={Link} className="w-full flex justify-center font-bold bg-verde-militar border-black text-white my-1" to='/formulario'>
-              Formulario Donación
+              Formulario Reciclado
             </Button>
             <Button variant="bordered" as={Link} className="w-full flex justify-center font-bold bg-verde-militar border-black text-white my-1" to='/ComoReciclar'>
             Cómo usar la app

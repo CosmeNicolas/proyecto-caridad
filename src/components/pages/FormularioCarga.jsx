@@ -81,7 +81,7 @@ const FormularioCarga = () => {
       <div className="mx-auto max-w-md backdrop-filter backdrop-blur-md bg-opacity-70 rounded-2xl  p-5 bg-[#00000034] ">
         <div className="font-mono bg-azul-oscuro rounded-xl py-2">
           <h1 className="text-center text-2xl font-bold text-white font-oswald ">
-            INGRESAR DONACIÓN
+            INGRESAR RECICLADO
           </h1>
           <p className="text-center text-gray-300">#ReciclaDesdeCasa</p>
         </div>
@@ -119,12 +119,12 @@ const FormularioCarga = () => {
               htmlFor="nombreDonacion"
               className="text-verde-militar font-bold font-oswald"
             >
-              Nombre Donación
+              Nombre Reciclado
             </label>
             <Input
               id="nombreDonacion"
               type="text"
-              placeholder="Nombre Donación"
+              placeholder="Nombre reciclado"
               {...register("nombreDonacion", {
                 required: "Este campo es obligatorio",
                 minLength: {
@@ -238,6 +238,7 @@ const FormularioCarga = () => {
               )}
             </div>
           </div>
+          {/* Localidades */}
           <div>
             <label
               htmlFor="localidades"
@@ -278,6 +279,9 @@ const FormularioCarga = () => {
               <option value="Tafí del valle">Tafí del Valle</option>
               <option value="Trancas">Trancas</option>
             </select>
+            {errors.localidades && (
+              <span className="text-red-500">{errors.localidades.message}</span>
+            )}
           </div>
           {/* NOMBRE COOPERADOR */}
           <div>
