@@ -1,7 +1,14 @@
-import { Card, CardBody, Image, Divider, Button, CardHeader } from "@nextui-org/react";
+import {
+  Card,
+  CardBody,
+  Image,
+  Divider,
+  Button,
+  CardHeader,
+} from "@nextui-org/react";
 import { Link } from "react-router-dom";
 import { useContext, useEffect, useState } from "react";
-import ContextDonaciones from "../../context/DonacionesContext"; 
+import ContextDonaciones from "../../context/DonacionesContext";
 import logo from "../../assets/img/logo-provisorio.png";
 import tacho from "../../assets/img/supertacho.png";
 
@@ -22,9 +29,11 @@ const CardRecursos = () => {
       {loading ? (
         <div className="text-center flex flex-col items-center justify-center h-screen">
           <img className="animate-pulse mx-auto" src={logo} alt="Card-image" />
-          <p className="cargando font-bold font-mono text-verde-oscuro">Cargando...</p>
+          <p className="cargando font-bold font-mono text-verde-oscuro">
+            Cargando...
+          </p>
         </div>
-      ) : donaciones.length  ? (
+      ) : donaciones.length ? (
         donaciones.map((donacion) => (
           <Card className="bg-[#efecdd] rounded-[10px]" key={donacion._id}>
             <CardHeader className="flex gap-3 justify-center bg-azul-oscuro/85 backdrop-blur-xl rounded-sm bg-azul-oscuro">
