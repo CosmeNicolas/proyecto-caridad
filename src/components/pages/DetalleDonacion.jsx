@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Card, CardBody, Image, CardHeader, Button } from "@nextui-org/react";
+import { Card, CardBody, Image, CardHeader, Button } from "@heroui/react";
 import { FaWhatsapp } from "react-icons/fa";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { eliminarDonacionApi, obtenerDonacionId } from "../../helpers/queries";
@@ -148,14 +148,13 @@ const DetalleDonacion = () => {
               </ul>
             </div>
             {!loading && ( // Solo mostrar el botón una vez que se complete la carga
-              <Button
+              (<Button
                 className={`bg-[#710347] hover:bg-[#5b0439] text-white shadow-lg mt-4 ${!puedeEliminar ? "opacity-50 cursor-not-allowed" : ""}`}
                 onClick={() => handleEliminarDonacion(donacion._id)}
                 isDisabled={!puedeEliminar} // Condición de deshabilitado
-              >
-                Eliminar
-                <MdDeleteForever className="text-lg font-bold ms-5" />
-              </Button>
+              >Eliminar
+                                <MdDeleteForever className="text-lg font-bold ms-5" />
+              </Button>)
             )}
             <Button
               as={Link}

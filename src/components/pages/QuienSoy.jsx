@@ -1,5 +1,5 @@
 import React from "react";
-import { Image } from "@nextui-org/image";
+import { Image } from "@heroui/image";
 import logo from "../../assets/img/logo-provisorio.png";
 
 export const QuienSoy = () => {

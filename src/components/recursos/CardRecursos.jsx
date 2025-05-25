@@ -1,4 +1,4 @@
-import { Card, CardBody, Image, Divider, Button, CardHeader } from "@nextui-org/react";
+import { Card, CardBody, Image, Divider, Button, CardHeader } from "@heroui/react";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
 import ContextDonaciones from "../../context/DonacionesContext"; 

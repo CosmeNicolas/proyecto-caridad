@@ -1,7 +1,7 @@
 import React, { useContext, useState} from "react";
 import { useForm } from "react-hook-form";
-import { Input } from "@nextui-org/input";
-import { Button } from "@nextui-org/react";
+import { Input } from "@heroui/input";
+import { Button } from "@heroui/react";
 import { crearDonacionApi } from "../../helpers/queries";
 import { useNavigate } from "react-router-dom";
 import Swal from 'sweetalert2'
