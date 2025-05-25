@@ -9,30 +9,40 @@ import Footer  from "./components/common/Footer"
 import DetalleDonacion from "./components/pages/DetalleDonacion"
 import { QuienSoy } from "./components/pages/QuienSoy";
 import LogoSoporte from "./components/common/LogoSoporte";
+import Compra from "./components/pages/Compra";
+import Vende from "./components/pages/Vende";
+import Recicla from "./components/pages/Recicla";
 
 function App() {
   return (
-   <>
- <BrowserRouter>
- <div className="relative flex flex-col min-h-screen">
-   <NavBar/>
-   <div className="flex-grow">
-  <DonacionesProvider>
-    <Routes>
-    <Route exact path="/" element={<Inicio />} />
-    <Route exact path='/donaciones' element={<CardRecursos/>}/>
-    <Route exact path='/formulario' element={<FormularioCarga/>}/>
-    <Route exact path='/detalleDonacion/:id' element={<DetalleDonacion/>}/>
-    <Route exact path='/ComoReciclar' element={<QuienSoy/>}/>
-    </Routes>
-  </DonacionesProvider>
-  </div>
-    <Footer/>
-    <LogoSoporte  /* className="absolute bottom-4 right-4" */ />
-   </div>
-   </BrowserRouter>
+    <>
+      <BrowserRouter>
+        <div className="relative flex flex-col min-h-screen">
+          <NavBar />
+          <div className="flex-grow">
+            <DonacionesProvider>
+              <Routes>
+                <Route exact path="/" element={<Inicio />} />
+                <Route exact path="/donaciones" element={<CardRecursos />} />
+                <Route exact path="/formulario" element={<FormularioCarga />} />
+                <Route
+                  exact
+                  path="/detalleDonacion/:id"
+                  element={<DetalleDonacion />}
+                />
+                <Route exact path="/ComoReciclar" element={<QuienSoy />} />
+                <Route path="/compra" element={<Compra />} />
+                <Route path="/vende" element={<Vende />} />
+                <Route path="/recicla" element={<Recicla />} />
+              </Routes>
+            </DonacionesProvider>
+          </div>
+          <Footer />
+          <LogoSoporte /* className="absolute bottom-4 right-4" */ />
+        </div>
+      </BrowserRouter>
     </>
-  )
+  );
 }
 
 export default App

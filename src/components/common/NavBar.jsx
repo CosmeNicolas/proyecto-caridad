@@ -1,3 +1,4 @@
+// ...imports iguales
 import { Navbar, NavbarBrand, NavbarContent, NavbarItem, NavbarMenuToggle, NavbarMenu, NavbarMenuItem, Button } from "@nextui-org/react";
 import { useState } from 'react';
 import logo from '../../assets/img/logo-provisorio.png';
@@ -9,7 +10,7 @@ const NavBar = () => {
 
   return (
     <>
-      <Navbar className="text-dark bg-[#35443770]  font-oswald" onMenuOpenChange={setIsMenuOpen}>
+      <Navbar className="text-dark bg-[#35443770] font-oswald" onMenuOpenChange={setIsMenuOpen}>
         <NavbarContent>
           <NavbarBrand>
             <Link to='/'>
@@ -17,71 +18,62 @@ const NavBar = () => {
             </Link>
           </NavbarBrand>
           <NavbarMenuToggle
-           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
-           className="sm:hidden border-2 border-white menu-toggle w-10 h-10"
+            aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+            className="sm:hidden border-2 border-white menu-toggle w-10 h-10"
           />
         </NavbarContent>
 
-        <NavbarContent className="hidden sm:flex gap-4 " justify="center">
-          <NavbarItem isActive={location.pathname === '/'}>
-            <Link
-              to="/"
-              className={`font-bold   ${location.pathname === '/' ? ' rounded-md bg-[#D6CC99] p-2 text-[#001524]' : 'text-[#D6CC99]'}`}
-            >
-              Inicio
-            </Link>
-          </NavbarItem>
-          <NavbarItem  isActive={location.pathname === '/donaciones'}>
-            <Link
-              to="/donaciones"
-              className={` font-bold   ${location.pathname === '/donaciones' ? ' rounded-md bg-[#D6CC99] p-2 text-[#001524]' : ' text-[#D6CC99]'}`}
-            >
-              Donaciones
-            </Link>
-          </NavbarItem>
-          <NavbarItem isActive={location.pathname === '/formulario'}>
-            <Link
-              to="/formulario"
-              className={`font-bold   ${location.pathname === '/formulario' ? ' rounded-md bg-[#D6CC99] p-2 text-[#001524]' : 'text-[#D6CC99]'}`}
-            >
-              Formulario Donación
-            </Link>
-          </NavbarItem>
-          <NavbarItem isActive={location.pathname === '/formulario'}>
-            <Link
-              to="/ComoReciclar"
-              className={`font-bold   ${location.pathname === '/ComoReciclar' ? ' rounded-md bg-[#D6CC99] p-2 text-[#001524]' : 'text-[#D6CC99]'}`}
-            >
-             Cómo usar la app
-            </Link>
-          </NavbarItem>
+        <NavbarContent className="hidden sm:flex gap-4" justify="center">
+          {[
+            { path: "/", label: "Inicio" },
+            { path: "/donaciones", label: "Donaciones" },
+            { path: "/formulario", label: "Formulario Donación" },
+            { path: "/ComoReciclar", label: "Cómo usar la app" },
+            { path: "/compra", label: "Compra" },
+            { path: "/vende", label: "Vende" },
+            { path: "/recicla", label: "Recicla" }
+          ].map(({ path, label }) => (
+            <NavbarItem key={path} isActive={location.pathname === path}>
+              <Link
+                to={path}
+                className={`font-bold ${location.pathname === path
+                  ? 'rounded-md bg-[#D6CC99] p-2 text-[#001524]'
+                  : 'text-[#D6CC99]'}`}
+              >
+                {label}
+              </Link>
+            </NavbarItem>
+          ))}
         </NavbarContent>
 
-      <NavbarMenu className="sm:hidden mx-auto  backdrop-filter backdrop-blur-md bg-opacity-70 rounded-2xl p-5 bg-[#8b89892a]  shadow-lg  overflow-y-auto flex flex-col justify-center" >
-{/*       <NavbarBrand className="flex flex-col justify-center"> */}
-            <Link to='/'>
-              <img className="mx-auto" src={logo} alt="logo" />
-              <p className= "text-center text-[#473B23] font-bold text-lg">#ReciclaDesdeCasa</p>
-            </Link>
-    {/*       </NavbarBrand> text-[#027039c9]  */}
-          <NavbarMenuItem>
-            <Button variant="bordered" as={Link} className="w-full flex justify-center font-bold my-1 bg-verde-militar border-black text-white" to='/'>
-              Inicio
+        <NavbarMenu className="sm:hidden mx-auto backdrop-filter backdrop-blur-md bg-opacity-70 rounded-2xl p-5 bg-[#8b89892a] shadow-lg overflow-y-auto flex flex-col justify-center">
+          <Link to='/'>
+            <img className="mx-auto" src={logo} alt="logo" />
+            <p className="text-center text-[#473B23] font-bold text-lg">#ReciclaDesdeCasa</p>
+          </Link>
+          {[
+            { path: "/", label: "Inicio" },
+            { path: "/donaciones", label: "Donaciones" },
+            { path: "/formulario", label: "Formulario Donación" },
+            { path: "/ComoReciclar", label: "Cómo usar la app" },
+            { path: "/compra", label: "Compra" },
+            { path: "/vende", label: "Vende" },
+            { path: "/recicla", label: "Recicla" }
+          ].map(({ path, label }) => (
+            <Button
+              key={path}
+              variant="bordered"
+              as={Link}
+              className="w-full flex justify-center font-bold my-1 bg-verde-militar border-black text-white"
+              to={path}
+            >
+              {label}
             </Button>
-            <Button variant="bordered" as={Link} className="w-full flex justify-center font-bold bg-verde-militar border-black text-white my-1" to='/donaciones'>
-              Donaciones
-            </Button>
-            <Button variant="bordered" as={Link} className="w-full flex justify-center font-bold bg-verde-militar border-black text-white my-1" to='/formulario'>
-              Formulario Donación
-            </Button>
-            <Button variant="bordered" as={Link} className="w-full flex justify-center font-bold bg-verde-militar border-black text-white my-1" to='/ComoReciclar'>
-            Cómo usar la app
-            </Button>
-          </NavbarMenuItem>
+          ))}
         </NavbarMenu>
       </Navbar>
     </>
   );
-}
+};
 
 export default NavBar;
